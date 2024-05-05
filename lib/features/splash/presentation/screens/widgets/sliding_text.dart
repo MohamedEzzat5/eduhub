@@ -32,7 +32,7 @@ class SlidingBody extends StatelessWidget {
               const Text(
                 AppStrings.splashBody,
                 textAlign: TextAlign.center,
-                style: Styles.textStyle16,
+                style: Styles.textStyle18,
               ),
               const SizedBox(height: 20,),
 
