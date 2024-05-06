@@ -1,4 +1,5 @@
 import 'package:faculty_app/features/guest/screens/first_guest_screen.dart';
+import 'package:faculty_app/features/guest/screens/second_guest_screen.dart';
 import 'package:faculty_app/features/splash/presentation/screens/splash_view.dart';
 import 'package:flutter/material.dart';
 import '../../core/utils/app_strings.dart';
@@ -23,15 +24,10 @@ class AppRoutes {
         return MaterialPageRoute(
           builder: (context) => const FirstGuestScreen(),
         );
-
-
-
-      // case Routes.randomQuoteRoute:
-      //   return MaterialPageRoute(
-      //       builder: (context) => BlocProvider(
-      //         create: (context) => di.sl<RandomQuoteCubit>(),
-      //         child: const QuoteScreen(),
-      //       ));
+        case Routes.secondGuestScreen:
+        return MaterialPageRoute(
+          builder: (context) => const SecondGuestScreen(),
+        );
 
       default:
         return undefinedRoute();

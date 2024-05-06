@@ -11,6 +11,7 @@ class Assets {
   static const String fontsTajawalRegular = 'assets/fonts/Tajawal-Regular.ttf';
   static const String imagesFace = 'assets/images/face.png';
   static const String imagesGuest1 = 'assets/images/guest1.png';
+  static const String imagesGuest2 = 'assets/images/guest2.png';
   static const String imagesLogo = 'assets/images/logo.png';
 
 }
