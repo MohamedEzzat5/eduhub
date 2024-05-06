@@ -1,3 +1,4 @@
+import 'package:faculty_app/config/routes/app_routes.dart';
 import 'package:faculty_app/core/utils/app_strings.dart';
 import 'package:faculty_app/core/utils/media_query_values.dart';
 import 'package:faculty_app/core/utils/style.dart';
@@ -45,7 +46,10 @@ class SlidingBody extends StatelessWidget {
               ),
               const SizedBox(height: 20,),
               DefaultOutlinedButton(
-                onPressed: (){},
+                onPressed: (){
+                  Navigator.pushNamed(context, Routes.firstGuestScreen);
+
+                },
                 height: 57,
                 width: context.width * 0.40,
                 radius: 40,

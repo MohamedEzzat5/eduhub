@@ -1,6 +1,6 @@
 
 import 'package:faculty_app/core/utils/assets_manger.dart';
-import 'package:faculty_app/features/splash/presentation/screens/widgets/sliding_text.dart';
+import 'package:faculty_app/features/splash/presentation/screens/widgets/sliding_body.dart';
 import 'package:flutter/cupertino.dart';
 
 
