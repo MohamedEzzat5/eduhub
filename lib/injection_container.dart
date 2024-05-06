@@ -6,8 +6,7 @@ import 'core/api/api_consumer.dart';
 import 'core/api/app_interceptor.dart';
 import 'core/api/dio_consumer.dart';
 import 'core/network/network_info.dart';
-import 'features/splash/data/repositories/lang_repository_impl.dart';
-import 'features/splash/domain/repositories/lang_repository.dart';
+
 
 final sl = GetIt.instance;
 
@@ -33,8 +32,8 @@ Future<void> init() async {
   //     networkInfo: sl(),
   //     randomQuoteRemoteDataSource: sl(),
   //     randomQuoteLocalDataSource: sl()));
-  sl.registerLazySingleton<LangRepository>(
-          () => LangRepositoryImpl(langLocalDataSource: sl()));
+  // sl.registerLazySingleton<LangRepository>(
+  //         () => LangRepositoryImpl(langLocalDataSource: sl()));
 
   // Data Sources
   // sl.registerLazySingleton<RandomQuoteLocalDataSource>(

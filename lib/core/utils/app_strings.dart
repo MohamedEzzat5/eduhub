@@ -17,4 +17,13 @@ static const String welcome = 'Welcome !';
 static const String splashBody = 'You are now on the app of\nthe Faculty of Computer and Information,\nMenoufia University\nIf you are a student, log in,\nand if you want to get to know the college\nclick on a guest.';
   static const String login = 'login';
   static const String guest = 'i`m a guest';
+  static const String firstGuestText1 = 'مرحبا عزيزي !';
+  static const String firstGuestText2 = 'تعد كلية حاسبات ومعلومات أهم\nالكليات المرتبطة بمجال التكنولوجيا\nوتتركز دراستها حول دراسة البرمجة\nبكافة أنواعها ومجالاتها المختلفة';
+  static const String firstGuestText3 = 'تقبل كلية حاسبات ومعلومات الطلاب من شعبة علمي رياضة وعلمي علوم ولا تقبل طلاب شعبة الأدبي مع الأخذ في الاعتبار أن طلاب علمي علوم تضاف لهم مادة تسمى math0 في الصف السنة الدراسية الأولى بكلية حاسبات ومعلومات تعويضاً لهم عن نقص المواد الرياضية في الثانوية العامة';
+  static const String firstGuestText4 = ':ماذا يطلق على خريج كلية حاسبات ومعلومات؟\nالمسمى الوظيفي هو مهندس برمجة ';
+
+
+
+
+
 }

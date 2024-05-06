@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'config/locale/app_localizations_setup.dart';
 import 'config/routes/app_routes.dart';
 import 'config/themes/app_theme.dart';
 import 'core/utils/app_strings.dart';
@@ -17,11 +16,11 @@ class FacultyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             onGenerateRoute: AppRoutes.onGeneratedRoute,
            // locale: state.locale,
-            supportedLocales: AppLocalizationsSetup.supportedLocales,
-            localeResolutionCallback:
-            AppLocalizationsSetup.localeResolutionCallback,
-            localizationsDelegates: AppLocalizationsSetup
-                .localizationsDelegates,
+           //  supportedLocales: AppLocalizationsSetup.supportedLocales,
+           //  localeResolutionCallback:
+           //  AppLocalizationsSetup.localeResolutionCallback,
+           //  localizationsDelegates: AppLocalizationsSetup
+           //      .localizationsDelegates,
           );
 
   }}

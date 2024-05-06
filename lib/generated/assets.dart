@@ -9,8 +9,8 @@ class Assets {
   static const String fontsTajawalLight = 'assets/fonts/Tajawal-Light.ttf';
   static const String fontsTajawalMedium = 'assets/fonts/Tajawal-Medium.ttf';
   static const String fontsTajawalRegular = 'assets/fonts/Tajawal-Regular.ttf';
-  static const String imagesImg = 'assets/images/logo.png';
-  static const String langAr = 'lang/ar.json';
-  static const String langEn = 'lang/en.json';
+  static const String imagesFace = 'assets/images/face.png';
+  static const String imagesGuest1 = 'assets/images/guest1.png';
+  static const String imagesLogo = 'assets/images/logo.png';
 
 }
