@@ -57,7 +57,7 @@ class CustomFormField extends StatelessWidget {
         this.hintText,
         this.backgroundColor,
         this.height,
-        this.radius = 30.0,
+        this.radius = 50.0,
         this.maxLines,
         this.enabled = true,
         this.inputBorder =
@@ -119,19 +119,19 @@ class CustomFormField extends StatelessWidget {
           suffixText: suffixText,
           contentPadding: contentPadding,
           isDense: true,
-          floatingLabelBehavior: FloatingLabelBehavior.never,
+          floatingLabelBehavior: FloatingLabelBehavior.always,
           suffixIconConstraints: suffixIconConstraints,
           labelStyle: Theme.of(context).textTheme.bodySmall!.copyWith(
             color: labelColor,
           ),
           labelText: labelText,
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(15),
+            borderRadius: BorderRadius.circular(40),
           ),
           enabledBorder: inputEnabledBorder,
           disabledBorder: inputDisabledBorder,
           focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(15),
+              borderRadius: BorderRadius.circular(40),
               borderSide: const BorderSide(
                 width: 2,
                 color: kPrimaryColor,
@@ -141,7 +141,7 @@ class CustomFormField extends StatelessWidget {
             fontSize: 16,
             color: Colors.grey,
           ),
-          hintTextDirection: TextDirection.rtl,
+          hintTextDirection: TextDirection.ltr,
           prefixIcon: prefixIcon,
           suffixIcon: suffixIcon,
         ),
