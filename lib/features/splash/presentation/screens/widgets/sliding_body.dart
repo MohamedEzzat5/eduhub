@@ -38,7 +38,9 @@ class SlidingBody extends StatelessWidget {
               const SizedBox(height: 20,),
 
               CustomMaterialButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, Routes.loginScreen);
+                },
                 text: AppStrings.login,
                 width: context.width * 0.75,
                 fontSize: 20,

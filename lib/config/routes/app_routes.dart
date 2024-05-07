@@ -1,3 +1,6 @@
+import 'package:faculty_app/features/auth/screens/forget_password_screen.dart';
+import 'package:faculty_app/features/auth/screens/login_screen.dart';
+import 'package:faculty_app/features/auth/screens/register_screen.dart';
 import 'package:faculty_app/features/guest/screens/first_guest_screen.dart';
 import 'package:faculty_app/features/guest/screens/second_guest_screen.dart';
 import 'package:faculty_app/features/splash/presentation/screens/splash_view.dart';
@@ -12,6 +15,9 @@ class Routes {
   static const secondGuestScreen = '/secondGuestScreen';
   static const thirdGuestScreen = '/thirdGuestScreen';
   static const fourthGuestScreen = '/fourthGuestScreen';
+  static const loginScreen = '/loginScreen';
+  static const registerScreen = '/registerScreen';
+  static const forgetPasswordScreen = '/forgetPasswordScreen';
 }
 
 class AppRoutes {
@@ -40,6 +46,22 @@ class AppRoutes {
         return MaterialPageRoute(
           builder: (context) => const FourthGuestScreen(),
         );
+
+        case Routes.loginScreen:
+        return MaterialPageRoute(
+          builder: (context) => const LoginScreen(),
+        );
+
+        case Routes.registerScreen:
+        return MaterialPageRoute(
+          builder: (context) => const RegisterScreen(),
+        );
+
+        case Routes.forgetPasswordScreen:
+        return MaterialPageRoute(
+          builder: (context) => const ForgetPasswordScreen(),
+        );
+
 
       default:
         return undefinedRoute();
