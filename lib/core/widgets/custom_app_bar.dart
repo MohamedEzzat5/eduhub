@@ -38,14 +38,14 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                     children: [
                       Text(
                         actionTitle,
-                        style: Styles.textStyle18.copyWith(color: Colors.white),
+                        style: Styles.textStyle20.copyWith(color: Colors.white),
                       ),
                       const Icon(
                         Icons.arrow_forward_ios_rounded,
-                        size: 18,
+                        size: 20,
                       ),
                       const SizedBox(
-                        width: 8,
+                        width: 15,
                       ),
                     ],
                   ),

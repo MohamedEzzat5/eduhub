@@ -3,6 +3,8 @@ import 'package:faculty_app/features/guest/screens/second_guest_screen.dart';
 import 'package:faculty_app/features/splash/presentation/screens/splash_view.dart';
 import 'package:flutter/material.dart';
 import '../../core/utils/app_strings.dart';
+import '../../features/guest/screens/fourth_guest_screen.dart';
+import '../../features/guest/screens/third_guest_screen.dart';
 
 class Routes {
   static const initialRoute = '/';
@@ -27,6 +29,16 @@ class AppRoutes {
         case Routes.secondGuestScreen:
         return MaterialPageRoute(
           builder: (context) => const SecondGuestScreen(),
+        );
+
+        case Routes.thirdGuestScreen:
+        return MaterialPageRoute(
+          builder: (context) => const ThirdGuestScreen(),
+        );
+
+        case Routes.fourthGuestScreen:
+        return MaterialPageRoute(
+          builder: (context) => const FourthGuestScreen(),
         );
 
       default:

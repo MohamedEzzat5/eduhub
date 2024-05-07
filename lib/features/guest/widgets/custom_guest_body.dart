@@ -14,7 +14,7 @@ class CustomGuestBody extends StatelessWidget {
         height: double.infinity,
         width: double.infinity,
         decoration:  BoxDecoration(
-            image: DecorationImage(image: AssetImage(bgImage),fit: BoxFit.cover)),
+            image: DecorationImage(image: AssetImage(bgImage),fit: BoxFit.fitWidth   )),
         child: bodyWidget);
   }
 }

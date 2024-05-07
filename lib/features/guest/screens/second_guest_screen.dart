@@ -1,3 +1,4 @@
+import 'package:faculty_app/config/routes/app_routes.dart';
 import 'package:faculty_app/core/utils/app_strings.dart';
 import 'package:faculty_app/core/utils/style.dart';
 import 'package:faculty_app/core/widgets/custom_app_bar.dart';
@@ -14,7 +15,9 @@ class SecondGuestScreen extends StatelessWidget {
       appBar: CustomAppBar(
         height: 50,
         actionTitle: 'Next',
-        actionOnPress: () {},
+        actionOnPress: () {
+          Navigator.pushNamed(context, Routes.thirdGuestScreen);
+        },
       ),
       body: CustomGuestBody(
         bgImage: Assets.imagesGuest2,
