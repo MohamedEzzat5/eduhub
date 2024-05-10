@@ -101,7 +101,7 @@ class CustomFormField extends StatelessWidget {
         controller: controller,
         validator: (data) {
           if(data!.isEmpty){
-            return  'من فضلك ادخل البيانات';
+            return  'This field is required';
           } return null;
         } ,
         keyboardType: keyboardType,

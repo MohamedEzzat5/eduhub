@@ -1,90 +1,112 @@
+import 'package:faculty_app/core/utils/app_colors.dart';
 import 'package:faculty_app/core/utils/media_query_values.dart';
+import 'package:faculty_app/core/utils/style.dart';
+import 'package:faculty_app/core/widgets/default_button.dart';
+import 'package:faculty_app/generated/assets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
+import '../../../core/widgets/default_form_field.dart';
 
-import '../../../core/utils/style.dart';
-import '../../../core/widgets/default_button.dart';
-import '../../../generated/assets.dart';
-
-class ResetPasswordScreen extends StatelessWidget {
+class ResetPasswordScreen extends StatefulWidget {
   const ResetPasswordScreen({super.key});
 
   @override
+  State<ResetPasswordScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<ResetPasswordScreen> {
+
+  final TextEditingController passwordController = TextEditingController();
+  final TextEditingController confirmPasswordController = TextEditingController();
+
+  final GlobalKey<FormState> formKey = GlobalKey();
+  bool _passwordVisible = true;
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          Expanded(
-              flex: 2,
-              child: SizedBox(
-                  width: context.width,
-                  child: Image.asset(
-                    Assets.imagesAuthImage,
-                    fit: BoxFit.fill,
-                  ))),
-          Expanded(
-            flex: 2,
-            child: Container(
+    return   Scaffold(
+      backgroundColor: const Color(0xffe9e9e9),
+      body: Form(
+        key: formKey,
+        child: Column(
+          children: [
+            Expanded(
+                child: SizedBox(
+                    width: context.width,
+                    child: Image.asset(Assets.imagesAuthImage,fit: BoxFit.fill,))),
+            Container(
+              height: context.height*0.55,
               width: double.infinity,
               decoration: const BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(30),
-                    topLeft: Radius.circular(30),
-                  )),
-              child: SingleChildScrollView(
+                  borderRadius: BorderRadius.only(topRight: Radius.circular(30), topLeft: Radius.circular(30),)
+              ),
+              child:  SingleChildScrollView(
                 child: Padding(
                   padding: const EdgeInsets.all(30.0),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
-                        'Code Verification',
-                        style: Styles.textStyle36,
-                      ),
-                      Text(
-                        'check your email to use the verification code',
-                        style: Styles.textStyle14
-                            .copyWith(fontWeight: FontWeight.w500),
-                      ),
-                      const SizedBox(
-                        height: 20,
-                      ),
-                      OtpTextField(
-                        numberOfFields: 5,
-                        borderColor: const Color(0xFF512DA8),
-                        showFieldAsBox: true,
-                        onCodeChanged: (String code) {
-                        },
-                        onSubmit: (String verificationCode) {
-                          showDialog(
-                              context: context,
-                              builder: (context) {
-                                return AlertDialog(
-                                  title: const Text("Verification Code"),
-                                  content:
-                                      Text('Code entered is $verificationCode'),
-                                );
-                              });
-                        }, // end onSubmit
+                      const Text('Reset Password',style: Styles.textStyle36,),
+                      const SizedBox(height: 15,),
+                      CustomFormField(
+                        labelText: 'New Password',
+                        labelColor: Colors.black,
+                        controller: passwordController,
+                        keyboardType: TextInputType.visiblePassword,
+                        obscureText: _passwordVisible,
+                        maxLines: 1,
+                        hintText: 'Enter your new password',
+                        textAlign: TextAlign.left,
+                        suffixIcon:  IconButton(
+                          icon: _passwordVisible? const Icon(Icons.visibility_rounded):
+                          Icon(Icons.visibility_off_rounded,color: AppColors.primary,),
+                          onPressed: (){
+                            setState(() {
+                              _passwordVisible = !_passwordVisible;
+                            });
+                          },
+                        ),
                       ),
                       const SizedBox(
-                        height: 40,
+                        height: 15,
                       ),
-                      CustomMaterialButton(
-                        onPressed: () {},
-                        text: 'Verify',
-                        fontWeight: FontWeight.w600,
-                        fontSize: 20,
+                      CustomFormField(
+                        labelText: 'Confirm Password',
+                        labelColor: Colors.black,
+                        controller: confirmPasswordController,
+                        keyboardType: TextInputType.visiblePassword,
+                        obscureText: _passwordVisible,
+                        maxLines: 1,
+                        hintText: 'Enter the same password',
+                        textAlign: TextAlign.left,
+                        suffixIcon:  IconButton(
+                          icon: _passwordVisible? const Icon(Icons.visibility_rounded):
+                          Icon(Icons.visibility_off_rounded,color: AppColors.primary,),
+                          onPressed: (){
+                            setState(() {
+                              _passwordVisible = !_passwordVisible;
+                            });
+                          },
+                        ),
                       ),
+
+
+                      const SizedBox(height: 25,),
+                      CustomMaterialButton(onPressed: (){
+
+
+                      }, text: 'Continue',fontWeight: FontWeight.w600,fontSize: 20,),
+
+
+
                     ],
                   ),
                 ),
               ),
             ),
-          ),
-        ],
+
+          ],
+        ),
       ),
     );
   }

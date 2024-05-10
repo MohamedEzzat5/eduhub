@@ -63,7 +63,7 @@ class _LoginScreenState extends State<ForgetPasswordScreen> {
 
                       const SizedBox(height: 40,),
                       CustomMaterialButton(onPressed: (){
-                        Navigator.pushNamed(context, Routes.resetPasswordScreen);
+                        Navigator.pushNamed(context, Routes.verificationScreen);
                       }, text: 'send code',fontWeight: FontWeight.w600,fontSize: 20,),
 
 

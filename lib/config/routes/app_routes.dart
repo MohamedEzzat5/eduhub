@@ -1,7 +1,8 @@
 import 'package:faculty_app/features/auth/screens/forget_password_screen.dart';
 import 'package:faculty_app/features/auth/screens/login_screen.dart';
-import 'package:faculty_app/features/auth/screens/otp_screen.dart';
 import 'package:faculty_app/features/auth/screens/reset_password_screen.dart';
+import 'package:faculty_app/features/auth/screens/verification_done_screen.dart';
+import 'package:faculty_app/features/auth/screens/verification_screen.dart';
 import 'package:faculty_app/features/guest/screens/first_guest_screen.dart';
 import 'package:faculty_app/features/guest/screens/second_guest_screen.dart';
 import 'package:faculty_app/features/splash/presentation/screens/splash_view.dart';
@@ -19,6 +20,8 @@ class Routes {
   static const loginScreen = '/loginScreen';
   static const registerScreen = '/registerScreen';
   static const forgetPasswordScreen = '/forgetPasswordScreen';
+  static const verificationScreen = '/verificationScreen';
+  static const verificationDoneScreen = '/verificationDoneScreen';
   static const resetPasswordScreen = '/resetPasswordScreen';
 }
 
@@ -54,9 +57,14 @@ class AppRoutes {
           builder: (context) =>  const LoginScreen(),
         );
 
-        case Routes.registerScreen:
+        case Routes.verificationScreen:
         return MaterialPageRoute(
-          builder: (context) => const OtpScreen(),
+          builder: (context) => const VerificationScreen(),
+        );
+
+        case Routes.verificationDoneScreen:
+        return MaterialPageRoute(
+          builder: (context) => const VerificationDoneScreen(),
         );
 
         case Routes.forgetPasswordScreen:
@@ -64,11 +72,13 @@ class AppRoutes {
           builder: (context) => const ForgetPasswordScreen(),
         );
 
-
         case Routes.resetPasswordScreen:
         return MaterialPageRoute(
           builder: (context) => const ResetPasswordScreen(),
         );
+
+
+
 
 
       default:
