@@ -10,12 +10,16 @@ class Assets {
   static const String fontsTajawalMedium = 'assets/fonts/Tajawal-Medium.ttf';
   static const String fontsTajawalRegular = 'assets/fonts/Tajawal-Regular.ttf';
   static const String imagesAuthImage = 'assets/images/auth_image.png';
+  static const String imagesBooks = 'assets/images/books.png';
+  static const String imagesDoctor = 'assets/images/doctor.png';
+  static const String imagesEvents = 'assets/images/events.png';
+  static const String imagesExit = 'assets/images/exit.png';
   static const String imagesFace = 'assets/images/face.png';
   static const String imagesGuest1 = 'assets/images/guest1.png';
   static const String imagesGuest2 = 'assets/images/guest2.png';
   static const String imagesGuest3 = 'assets/images/guest3.jpg';
   static const String imagesGuest4 = 'assets/images/guest4.jpg';
-  static const String imagesStudent = 'assets/images/student.png';
   static const String imagesLogo = 'assets/images/logo.png';
+  static const String imagesStudent = 'assets/images/student.png';
 
 }
