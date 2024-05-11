@@ -1,3 +1,5 @@
+
+import 'package:faculty_app/config/routes/app_routes.dart';
 import 'package:faculty_app/core/utils/app_colors.dart';
 import 'package:faculty_app/core/utils/media_query_values.dart';
 import 'package:faculty_app/core/utils/style.dart';
@@ -94,6 +96,7 @@ class _LoginScreenState extends State<ResetPasswordScreen> {
                       const SizedBox(height: 25,),
                       CustomMaterialButton(onPressed: (){
 
+                        Navigator.pushNamed(context, Routes.adminHomeScreen);
 
                       }, text: 'Continue',fontWeight: FontWeight.w600,fontSize: 20,),
 

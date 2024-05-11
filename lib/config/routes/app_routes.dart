@@ -1,3 +1,4 @@
+import 'package:faculty_app/features/admin/screens/admin_home_screen.dart';
 import 'package:faculty_app/features/auth/screens/forget_password_screen.dart';
 import 'package:faculty_app/features/auth/screens/login_screen.dart';
 import 'package:faculty_app/features/auth/screens/reset_password_screen.dart';
@@ -23,6 +24,7 @@ class Routes {
   static const verificationScreen = '/verificationScreen';
   static const verificationDoneScreen = '/verificationDoneScreen';
   static const resetPasswordScreen = '/resetPasswordScreen';
+  static const adminHomeScreen = '/adminHomeScreen';
 }
 
 class AppRoutes {
@@ -75,6 +77,12 @@ class AppRoutes {
         case Routes.resetPasswordScreen:
         return MaterialPageRoute(
           builder: (context) => const ResetPasswordScreen(),
+        );
+
+
+        case Routes.adminHomeScreen:
+        return MaterialPageRoute(
+          builder: (context) => const AdminHomeScreen(),
         );
 
 
