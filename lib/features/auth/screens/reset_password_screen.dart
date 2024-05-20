@@ -6,6 +6,7 @@ import 'package:faculty_app/core/utils/style.dart';
 import 'package:faculty_app/core/widgets/default_button.dart';
 import 'package:faculty_app/generated/assets.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import '../../../core/widgets/default_form_field.dart';
 
 class ResetPasswordScreen extends StatefulWidget {
@@ -95,8 +96,7 @@ class _LoginScreenState extends State<ResetPasswordScreen> {
 
                       const SizedBox(height: 25,),
                       CustomMaterialButton(onPressed: (){
-
-                        Navigator.pushNamed(context, Routes.adminHomeScreen);
+                        GoRouter.of(context).push(AppRouter.adminHomeScreen);
 
                       }, text: 'Continue',fontWeight: FontWeight.w600,fontSize: 20,),
 

@@ -5,6 +5,7 @@ import 'package:faculty_app/core/utils/style.dart';
 import 'package:faculty_app/core/widgets/default_button.dart';
 import 'package:faculty_app/core/widgets/default_outlined_button.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../../core/utils/constance.dart';
 
@@ -39,7 +40,7 @@ class SlidingBody extends StatelessWidget {
 
               CustomMaterialButton(
                 onPressed: () {
-                  Navigator.pushNamed(context, Routes.loginScreen);
+                  GoRouter.of(context).push(AppRouter.loginScreen);
                 },
                 text: AppStrings.login,
                 width: context.width * 0.75,
@@ -49,7 +50,7 @@ class SlidingBody extends StatelessWidget {
               const SizedBox(height: 20,),
               DefaultOutlinedButton(
                 onPressed: (){
-                  Navigator.pushNamed(context, Routes.firstGuestScreen);
+                  GoRouter.of(context).push(AppRouter.firstGuestScreen);
 
                 },
                 height: 57,

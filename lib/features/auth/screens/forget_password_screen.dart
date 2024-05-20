@@ -4,6 +4,7 @@ import 'package:faculty_app/core/utils/style.dart';
 import 'package:faculty_app/core/widgets/default_button.dart';
 import 'package:faculty_app/generated/assets.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import '../../../core/widgets/default_form_field.dart';
 
 class ForgetPasswordScreen extends StatefulWidget {
@@ -63,7 +64,7 @@ class _LoginScreenState extends State<ForgetPasswordScreen> {
 
                       const SizedBox(height: 40,),
                       CustomMaterialButton(onPressed: (){
-                        Navigator.pushNamed(context, Routes.verificationScreen);
+                        GoRouter.of(context).push(AppRouter.verificationScreen);
                       }, text: 'send code',fontWeight: FontWeight.w600,fontSize: 20,),
 
 

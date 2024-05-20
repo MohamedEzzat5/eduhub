@@ -9,6 +9,9 @@ class Assets {
   static const String fontsTajawalLight = 'assets/fonts/Tajawal-Light.ttf';
   static const String fontsTajawalMedium = 'assets/fonts/Tajawal-Medium.ttf';
   static const String fontsTajawalRegular = 'assets/fonts/Tajawal-Regular.ttf';
+  static const String imagesAddDoctor = 'assets/images/add_doctor.png';
+  static const String imagesAddStudent = 'assets/images/add_student.png';
+  static const String imagesAddSubToDoctor = 'assets/images/add_sub_to_doctor.png';
   static const String imagesAuthImage = 'assets/images/auth_image.png';
   static const String imagesBooks = 'assets/images/books.png';
   static const String imagesDoctor = 'assets/images/doctor.png';
@@ -20,6 +23,8 @@ class Assets {
   static const String imagesGuest3 = 'assets/images/guest3.jpg';
   static const String imagesGuest4 = 'assets/images/guest4.jpg';
   static const String imagesLogo = 'assets/images/logo.png';
+  static const String imagesStars = 'assets/images/stars.png';
   static const String imagesStudent = 'assets/images/student.png';
+  static const String imagesSubject = 'assets/images/subject.png';
 
 }

@@ -2,6 +2,7 @@ import 'package:faculty_app/config/routes/app_routes.dart';
 import 'package:faculty_app/core/utils/media_query_values.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../core/utils/style.dart';
 import '../../../core/widgets/default_button.dart';
@@ -75,7 +76,7 @@ class VerificationScreen extends StatelessWidget {
                       ),
                       CustomMaterialButton(
                         onPressed: () {
-                          Navigator.pushNamed(context, Routes.verificationDoneScreen);
+                          GoRouter.of(context).push(AppRouter.verificationDoneScreen);
                         },
                         text: 'Verify',
                         fontWeight: FontWeight.w600,

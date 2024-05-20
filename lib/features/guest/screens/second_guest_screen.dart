@@ -4,6 +4,7 @@ import 'package:faculty_app/core/utils/style.dart';
 import 'package:faculty_app/core/widgets/custom_app_bar.dart';
 import 'package:faculty_app/generated/assets.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import '../widgets/custom_guest_body.dart';
 
 class SecondGuestScreen extends StatelessWidget {
@@ -16,7 +17,7 @@ class SecondGuestScreen extends StatelessWidget {
         height: 50,
         actionTitle: 'Next',
         actionOnPress: () {
-          Navigator.pushNamed(context, Routes.thirdGuestScreen);
+          GoRouter.of(context).push(AppRouter.thirdGuestScreen);
         },
       ),
       body: CustomGuestBody(

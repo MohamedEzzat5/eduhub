@@ -41,12 +41,12 @@ class CustomFormField extends StatelessWidget {
   final TextAlign textAlign;
 
   const CustomFormField(
-      {Key? key,
+      {super.key,
         required this.controller,
         this.validator,
         this.onTap,
         this.labelText,
-        required this.keyboardType,
+        this.keyboardType = TextInputType.text,
         this.onFieldSubmitted,
         this.onEditingComplete,
         this.onChanged,
@@ -77,8 +77,7 @@ class CustomFormField extends StatelessWidget {
         this.cursorColor,
         this.maxLength,
         this.textDirection = TextDirection.ltr,
-        this.textAlign = TextAlign.start})
-      : super(key: key);
+        this.textAlign = TextAlign.start});
 
   @override
   Widget build(BuildContext context) {

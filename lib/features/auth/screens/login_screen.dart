@@ -7,6 +7,7 @@ import 'package:faculty_app/core/widgets/default_button.dart';
 import 'package:faculty_app/core/widgets/default_text_button.dart';
 import 'package:faculty_app/generated/assets.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import '../../../core/widgets/default_form_field.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -89,7 +90,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: 5,
                     ),
                     DefaultTextButton(onPressed: (){
-                      Navigator.pushNamed(context, Routes.forgetPasswordScreen);
+                      GoRouter.of(context).push(AppRouter.forgetPasswordScreen);
+
                     }, child: const Text('Forgot your password ?',style: Styles.textStyle16,),),
                     DropdownButtonFormField<String>(
                       value: selectedRole,

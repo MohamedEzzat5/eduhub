@@ -1,8 +1,10 @@
+import 'package:faculty_app/config/routes/app_routes.dart';
 import 'package:faculty_app/core/utils/constance.dart';
 import 'package:faculty_app/core/utils/style.dart';
 import 'package:faculty_app/features/admin/widgets/admin_home_grid_view_item.dart';
 import 'package:faculty_app/generated/assets.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class AdminHomeScreen extends StatelessWidget {
   const AdminHomeScreen({super.key});
@@ -48,12 +50,23 @@ class AdminHomeScreen extends StatelessWidget {
                   shrinkWrap: true,
                   crossAxisSpacing: 10,
                   mainAxisSpacing: 10,
-                  children: const [
-                    CustomAdminGridViewItem(image: Assets.imagesStudent,title: 'الطلاب',),
-                    CustomAdminGridViewItem(image: Assets.imagesDoctor,title: 'الدكتور',),
-                    CustomAdminGridViewItem(image: Assets.imagesBooks,title: 'المواد',),
-                    CustomAdminGridViewItem(image: Assets.imagesEvents,title: 'فعاليات',),
-                    CustomAdminGridViewItem(image: Assets.imagesExit,title: 'خروج',),
+                  children: [
+                    CustomAdminGridViewItem(image: Assets.imagesStudent,title: 'الطلاب', onTap: (){
+                      GoRouter.of(context).push(AppRouter.adminStudentScreen);
+
+                    },),
+                    CustomAdminGridViewItem(image: Assets.imagesDoctor,title: 'الدكتور',onTap: (){
+                      GoRouter.of(context).push(AppRouter.adminDoctorScreen);
+                    },),
+                    CustomAdminGridViewItem(image: Assets.imagesBooks,title: 'المواد',onTap: (){
+                      GoRouter.of(context).push(AppRouter.adminSubjectScreen);
+                    },),
+                    CustomAdminGridViewItem(image: Assets.imagesEvents,title: 'فعاليات',onTap: (){
+                      GoRouter.of(context).push(AppRouter.adminEventScreen);
+                    },),
+                    CustomAdminGridViewItem(image: Assets.imagesExit,title: 'خروج',onTap: (){
+                      GoRouter.of(context).pop();
+                    },),
 
 
                   ],

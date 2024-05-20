@@ -4,22 +4,26 @@ import 'package:flutter/material.dart';
 
 class CustomAdminGridViewItem extends StatelessWidget {
   const CustomAdminGridViewItem({
-    super.key, required this.image, required this.title,
+    super.key, required this.image, required this.title, required this.onTap
   });
   final String image,title;
+  final VoidCallback onTap ;
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 3,
-      child: Column(
-        children: [
-          Image.asset(
-            image,
-            height: context.height*0.13,
-          ),
-          const SizedBox(height: 20,),
-          Text(title,style: Styles.textStyle20,)
-        ],
+    return GestureDetector(
+      onTap: onTap ,
+      child: Card(
+        elevation: 3,
+        child: Column(
+          children: [
+            Image.asset(
+              image,
+              height: context.height*0.13,
+            ),
+            const SizedBox(height: 20,),
+            Text(title,style: Styles.textStyle20,)
+          ],
+        ),
       ),
     );
   }

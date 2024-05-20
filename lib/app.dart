@@ -10,11 +10,12 @@ class FacultyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-          return MaterialApp(
+          return MaterialApp.router(
+            routerConfig: AppRouter.router,
             title: AppStrings.appName,
             theme: appTheme(),
             debugShowCheckedModeBanner: false,
-            onGenerateRoute: AppRoutes.onGeneratedRoute,
+
            // locale: state.locale,
            //  supportedLocales: AppLocalizationsSetup.supportedLocales,
            //  localeResolutionCallback:

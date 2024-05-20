@@ -5,6 +5,7 @@ import 'package:faculty_app/core/utils/style.dart';
 import 'package:faculty_app/core/widgets/default_button.dart';
 import 'package:faculty_app/generated/assets.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class VerificationDoneScreen extends StatelessWidget {
   const VerificationDoneScreen({super.key});
@@ -64,7 +65,7 @@ class VerificationDoneScreen extends StatelessWidget {
                       ),
                       CustomMaterialButton(
                         onPressed: () {
-                           Navigator.pushNamed(context, Routes.resetPasswordScreen);
+                          GoRouter.of(context).push(AppRouter.resetPasswordScreen);
                         },
                         text: 'Get Started',
                         fontWeight: FontWeight.w600,
