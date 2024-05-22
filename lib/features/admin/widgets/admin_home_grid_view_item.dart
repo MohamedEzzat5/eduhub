@@ -20,7 +20,7 @@ class CustomAdminGridViewItem extends StatelessWidget {
               image,
               height: context.height*0.13,
             ),
-            const SizedBox(height: 20,),
+            const SizedBox(height: 8,),
             Text(title,style: Styles.textStyle20,)
           ],
         ),

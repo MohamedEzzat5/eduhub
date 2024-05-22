@@ -11,6 +11,9 @@ import 'package:faculty_app/features/auth/screens/verification_screen.dart';
 import 'package:faculty_app/features/guest/screens/first_guest_screen.dart';
 import 'package:faculty_app/features/guest/screens/second_guest_screen.dart';
 import 'package:faculty_app/features/splash/presentation/screens/splash_view.dart';
+import 'package:faculty_app/features/student/current_subject.dart';
+import 'package:faculty_app/features/student/grads.dart';
+import 'package:faculty_app/features/student/student_subject_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../features/admin/screens/add_new_student.dart';
@@ -19,6 +22,7 @@ import '../../features/admin/screens/add_subject_to_doctor.dart';
 import '../../features/admin/screens/subject_screen.dart';
 import '../../features/guest/screens/fourth_guest_screen.dart';
 import '../../features/guest/screens/third_guest_screen.dart';
+import '../../features/student/student_home_screen.dart';
 class AppRouter {
   static const initialRoute = '/';
   static const firstGuestScreen = '/firstGuestScreen';
@@ -40,6 +44,10 @@ class AppRouter {
   static const adminAddNewSubjectScreen = '/adminAddNewSubjectScreen';
   static const adminAddSubjectToDoctorScreen = '/adminAddSubjectToDoctorScreen';
   static const adminEventScreen = '/adminEventScreen';
+  static const studentHomeScreen = '/studentHomeScreen';
+  static const studentGradsScreen = '/studentGradsScreen';
+  static const studentSubjectScreen = '/studentSubjectScreen';
+  static const studentCurrentSubjectScreen = '/studentCurrentSubjectScreen';
 
   static final router = GoRouter(
       routes: <RouteBase>[
@@ -188,7 +196,39 @@ class AppRouter {
         GoRoute(
           path: adminEventScreen,
           builder: (BuildContext context, GoRouterState state) {
-            return const EventScreen();
+            return const AdminEventScreen();
+          },
+        ),
+
+
+        GoRoute(
+          path: studentHomeScreen,
+          builder: (BuildContext context, GoRouterState state) {
+            return const StudentHomeScreen();
+          },
+        ),
+
+
+        GoRoute(
+          path: studentGradsScreen,
+          builder: (BuildContext context, GoRouterState state) {
+            return const GradsScreen();
+          },
+        ),
+
+
+        GoRoute(
+          path: studentSubjectScreen,
+          builder: (BuildContext context, GoRouterState state) {
+            return const StudentSubjectScreen();
+          },
+        ),
+
+
+        GoRoute(
+          path: studentCurrentSubjectScreen,
+          builder: (BuildContext context, GoRouterState state) {
+            return const CurrentSubject();
           },
         ),
 

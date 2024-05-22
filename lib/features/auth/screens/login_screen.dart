@@ -126,7 +126,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
 
                     const SizedBox(height: 25,),
-                    CustomMaterialButton(onPressed: (){}, text: 'Login',fontWeight: FontWeight.w600,fontSize: 20,),
+                    CustomMaterialButton(onPressed: (){
+                      if (selectedRole == 'Admin') {
+                        GoRouter.of(context).push(AppRouter.adminHomeScreen);
+                      } else if (selectedRole == 'Student') {
+                        GoRouter.of(context).push(AppRouter.studentHomeScreen);
+                      }
+                    }, text: 'Login',fontWeight: FontWeight.w600,fontSize: 20,),
 
 
 

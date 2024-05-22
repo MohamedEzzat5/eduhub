@@ -22,9 +22,15 @@ class Assets {
   static const String imagesGuest2 = 'assets/images/guest2.png';
   static const String imagesGuest3 = 'assets/images/guest3.jpg';
   static const String imagesGuest4 = 'assets/images/guest4.jpg';
+  static const String imagesList = 'assets/images/List.png';
   static const String imagesLogo = 'assets/images/logo.png';
+  static const String imagesPath = 'assets/images/path.png';
+  static const String imagesProgress = 'assets/images/Progress.png';
+  static const String imagesSmallStar = 'assets/images/small_star.png';
   static const String imagesStars = 'assets/images/stars.png';
   static const String imagesStudent = 'assets/images/student.png';
   static const String imagesSubject = 'assets/images/subject.png';
+  static const String imagesTable = 'assets/images/table.png';
+  static const String imagesTasgel = 'assets/images/tasgel.png';
 
 }

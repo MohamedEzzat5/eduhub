@@ -1,7 +1,6 @@
 import 'package:faculty_app/core/utils/constance.dart';
 import 'package:faculty_app/core/utils/media_query_values.dart';
 import 'package:faculty_app/core/utils/style.dart';
-import 'package:faculty_app/core/widgets/default_form_field.dart';
 import 'package:faculty_app/generated/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -9,14 +8,14 @@ import 'package:go_router/go_router.dart';
 import '../../../config/routes/app_routes.dart';
 import '../../../core/widgets/default_button.dart';
 
-class EventScreen extends StatefulWidget {
-  const EventScreen({super.key});
+class AdminEventScreen extends StatefulWidget {
+  const AdminEventScreen({super.key});
 
   @override
-  State<EventScreen> createState() => _DoctorScreenState();
+  State<AdminEventScreen> createState() => _DoctorScreenState();
 }
 
-class _DoctorScreenState extends State<EventScreen> {
+class _DoctorScreenState extends State<AdminEventScreen> {
 
   final TextEditingController doctorController = TextEditingController();
 
