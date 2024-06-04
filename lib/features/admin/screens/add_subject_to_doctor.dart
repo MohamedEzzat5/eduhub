@@ -9,57 +9,78 @@ class AdminAddSubjectToDoctorScreen extends StatefulWidget {
   const AdminAddSubjectToDoctorScreen({super.key});
 
   @override
-  State<AdminAddSubjectToDoctorScreen> createState() => _AdminAddSubjectToDoctorScreenState();
+  State<AdminAddSubjectToDoctorScreen> createState() =>
+      _AdminAddSubjectToDoctorScreenState();
 }
 
-class _AdminAddSubjectToDoctorScreenState extends State<AdminAddSubjectToDoctorScreen> {
-
+class _AdminAddSubjectToDoctorScreenState
+    extends State<AdminAddSubjectToDoctorScreen> {
   final TextEditingController subjectNameController = TextEditingController();
   final TextEditingController doctorIdController = TextEditingController();
 
-
-
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       backgroundColor: const Color(0xffc2c4bf),
       body: SingleChildScrollView(
         child: Column(
           children: [
             SizedBox(
-                height: context.height*0.4,
+                height: context.height * 0.4,
                 width: context.width,
-                child: Image.asset(Assets.imagesAddSubToDoctor,fit: BoxFit.fill,)),
+                child: Image.asset(
+                  Assets.imagesAddSubToDoctor,
+                  fit: BoxFit.fill,
+                )),
             Container(
-              height: context.height*0.6,
+              height: context.height * 0.6,
               width: double.infinity,
               decoration: const BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.only(topRight: Radius.circular(30), topLeft: Radius.circular(30),)
-              ),
-              child:   Padding(
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(30),
+                    topLeft: Radius.circular(30),
+                  )),
+              child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const SizedBox(height: 30,),
-                    CustomAddNewTypeTextField(controller: subjectNameController,label: 'اسم الماده',),
-                    const SizedBox(height: 10,),
-                    CustomAddNewTypeTextField(controller: doctorIdController,label: 'id الدكتور',),
-                    const SizedBox(height: 30,),
-                    Center(child: CustomMaterialButton(onPressed: (){GoRouter.of(context).pop();}, text: 'تم',fontWeight: FontWeight.w600,fontSize: 20,width: context.width*0.4,)),
-
-
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    CustomAddNewTypeTextField(
+                      controller: subjectNameController,
+                      label: 'اسم الماده',
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    CustomAddNewTypeTextField(
+                      controller: doctorIdController,
+                      label: 'id الدكتور',
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    Center(
+                        child: CustomMaterialButton(
+                      onPressed: () {
+                        GoRouter.of(context).pop();
+                      },
+                      text: 'تم',
+                      fontWeight: FontWeight.w600,
+                      fontSize: 20,
+                      width: context.width * 0.4,
+                    )),
                   ],
                 ),
               ),
             ),
-
           ],
         ),
       ),
     );
   }
 }
-

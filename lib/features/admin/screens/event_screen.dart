@@ -1,8 +1,10 @@
 import 'package:faculty_app/core/utils/constance.dart';
 import 'package:faculty_app/core/utils/media_query_values.dart';
 import 'package:faculty_app/core/utils/style.dart';
+import 'package:faculty_app/core/utils/text_styles.dart';
+import 'package:faculty_app/core/widgets/default_button.dart';
 import 'package:faculty_app/core/widgets/gaps.dart';
- import 'package:faculty_app/generated/assets.dart';
+import 'package:faculty_app/generated/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
@@ -38,10 +40,28 @@ class _DoctorScreenState extends State<AdminEventScreen> {
                         GestureDetector(
                           onTap:()=> GoRouter.of(context).pop(),
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              const Icon(Icons.arrow_back_ios_new_rounded,color: Colors.white,),
-                              Text('فعاليات',style: Styles.textStyle24.copyWith(color: Colors.white),),
+                              CustomMaterialButton(
+                                onPressed: () {
+                                  GoRouter.of(context).pop();
+                                },
+                                text: 'اضافة',
+                                fontWeight: FontWeight.w600,
+                                fontSize: 20,
+                                background: Colors.white,
+                                padding:  EdgeInsets.all(10.r),
+                                height:  35.h,
+                                textColor: kPrimaryColor,
+                                width: context.width * 0.3,
+                              ),
+                              Row(
+                                children: [
+                                  const Icon(Icons.arrow_back_ios_new_rounded,color: Colors.white,),
+                                  Text('فعاليات',style: Styles.textStyle24.copyWith(color: Colors.white),),
+
+                                ],
+                              ),
                             ],
                           ),
                         ),
@@ -53,7 +73,7 @@ class _DoctorScreenState extends State<AdminEventScreen> {
               ),
             ),
             Expanded(
-              flex: 5,
+              flex: 9,
               child: Container(
                   decoration: const BoxDecoration(
                       color: Colors.white,
@@ -63,19 +83,55 @@ class _DoctorScreenState extends State<AdminEventScreen> {
                     children: [
                       Expanded(
                         child: ListView.builder(
-                          itemCount: 1,
+                          itemCount: 5,
                           itemBuilder: (context, index) {
                             return Container(
-                              padding: EdgeInsets.all(15.r),
                               margin:   EdgeInsets.all(15.r),
                               decoration: BoxDecoration(
                                 color: Colors.white,
-                                borderRadius: BorderRadius.circular(15),
-                               border: Border.all(color: Colors.grey),
+                                borderRadius: BorderRadius.circular(15.r),
+                                border: Border.all(color: kPrimaryColor,width: 2.5),
                               ),
                               child: Column(
                                 children: [
-                                  Gaps.vGap16,
+                                  Padding(
+                                    padding: EdgeInsets.all(15.r),
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.end,
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                          children: [
+                                            Text('06 JUN 24, 06:00 AM',style:TextStyles.bold16().copyWith(color: kPrimaryColor),),
+                                            Gaps.hGap30,
+                                            Text('رحلة دهب',style:TextStyles.bold16().copyWith(color: kPrimaryColor),),
+                                          ],
+                                        ),
+                                        Text('الذهاب والإستمتاع بمناظر الجبال والصحراء والشواطئ الرمليةو مياه البحر الاحمر ويتم من خلالها العديد من رحلات السفاري.',
+                                          style:TextStyles.regular14().copyWith(color: Colors.black),textAlign: TextAlign.start,textDirection: TextDirection.rtl,),
+                                        Gaps.vGap8,
+                                        Row(
+                                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                          children: [
+                                            Text('500 LE',style:TextStyles.bold16().copyWith(color: kPrimaryColor),),
+                                            Text('VF-Cash  0123456789',style:TextStyles.bold16().copyWith(color: kPrimaryColor),),
+                                          ],
+                                        ),
+
+                                      ],
+                                    ),
+                                  ),
+                                  Container(
+                                    width: double.infinity,
+                                    height: 110.h,
+                                    decoration:  BoxDecoration(
+                                        borderRadius: BorderRadius.only( bottomLeft: Radius.circular(15.r), bottomRight: Radius.circular(15.r)),
+                                        image: const DecorationImage(
+                                          image: AssetImage(Assets.imagesEvent2),
+                                          fit: BoxFit.cover,
+                                        )
+                                    ),
+                                  )
 
                                 ],
                               ),
