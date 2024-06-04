@@ -36,7 +36,7 @@ class _AdminDoctorScreenState extends State<AdminDoctorScreen> {
                       children: [
                         GestureDetector(
                           onTap: () {
-                            Navigator.pop(context);
+                            GoRouter.of(context).pop();
                           },
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.end,

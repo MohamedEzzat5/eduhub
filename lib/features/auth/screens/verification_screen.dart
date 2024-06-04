@@ -22,7 +22,7 @@ class VerificationScreen extends StatelessWidget {
                   width: context.width,
                   child: Image.asset(
                     Assets.imagesAuthImage,
-                    fit: BoxFit.fill,
+                    fit: BoxFit.cover,
                   ))),
           Expanded(
             flex: 2,

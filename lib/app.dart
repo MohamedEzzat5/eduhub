@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'config/routes/app_routes.dart';
 import 'config/themes/app_theme.dart';
 import 'core/utils/app_strings.dart';
@@ -10,18 +11,16 @@ class FacultyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-          return MaterialApp.router(
-            routerConfig: AppRouter.router,
-            title: AppStrings.appName,
-            theme: appTheme(),
-            debugShowCheckedModeBanner: false,
-
-           // locale: state.locale,
-           //  supportedLocales: AppLocalizationsSetup.supportedLocales,
-           //  localeResolutionCallback:
-           //  AppLocalizationsSetup.localeResolutionCallback,
-           //  localizationsDelegates: AppLocalizationsSetup
-           //      .localizationsDelegates,
+          return ScreenUtilInit(
+            designSize: const Size(360, 690),
+            minTextAdapt: true,
+            splitScreenMode: true,
+            builder: (context, child) => MaterialApp.router(
+              routerConfig: AppRouter.router,
+              title: AppStrings.appName,
+              theme: appTheme(),
+              debugShowCheckedModeBanner: false,
+            ),
           );
 
   }}

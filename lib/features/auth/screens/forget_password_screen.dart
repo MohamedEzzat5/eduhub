@@ -29,7 +29,7 @@ class _LoginScreenState extends State<ForgetPasswordScreen> {
           Expanded(flex: 2,
               child: SizedBox(
                   width: context.width,
-                  child: Image.asset(Assets.imagesAuthImage,fit: BoxFit.fill,))),
+                  child: Image.asset(Assets.imagesAuthImage,fit: BoxFit.cover,))),
           Expanded(
             flex: 2,
             child: Container(

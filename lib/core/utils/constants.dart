@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:go_router/go_router.dart';
 
 import 'app_colors.dart';
 
@@ -20,7 +21,7 @@ class Constants {
         actions: [
           TextButton(
             onPressed: () {
-              Navigator.pop(context);
+              GoRouter.of(context).pop();
             },
             style: TextButton.styleFrom(foregroundColor: Colors.black),
             child: const Text(

@@ -4,6 +4,7 @@ import 'package:faculty_app/core/utils/style.dart';
 import 'package:faculty_app/core/widgets/default_button.dart';
 import 'package:faculty_app/generated/assets.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 
 class GradsScreen extends StatefulWidget {
@@ -38,7 +39,7 @@ class _DoctorScreenState extends State<GradsScreen> {
                         ),
                         GestureDetector(
                           onTap: () {
-                            Navigator.pop(context);
+                            GoRouter.of(context).pop();
                           },
                           child:  Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -50,7 +51,7 @@ class _DoctorScreenState extends State<GradsScreen> {
                               ),
                               GestureDetector(
                                 onTap: (){
-                                  Navigator.pop(context);
+                                  GoRouter.of(context).pop();
                                   },
                                 child: const Icon(
                                   Icons.arrow_back_ios_new_rounded,

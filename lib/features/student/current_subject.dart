@@ -4,6 +4,7 @@ import 'package:faculty_app/core/utils/media_query_values.dart';
 import 'package:faculty_app/core/utils/style.dart';
 import 'package:faculty_app/generated/assets.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 
 class CurrentSubject extends StatefulWidget {
@@ -49,7 +50,7 @@ class _CurrentSubjectState extends State<CurrentSubject> with TickerProviderStat
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         GestureDetector(
-                          onTap:(){Navigator.pop(context);},
+                          onTap:()=>GoRouter.of(context).pop(),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [

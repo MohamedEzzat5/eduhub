@@ -35,7 +35,7 @@ class _DoctorScreenState extends State<StudentSubjectScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         GestureDetector(
-                          onTap:(){Navigator.pop(context);},
+                          onTap:()=> GoRouter.of(context).pop(),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [

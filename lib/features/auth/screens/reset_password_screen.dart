@@ -34,7 +34,7 @@ class _LoginScreenState extends State<ResetPasswordScreen> {
             Expanded(
                 child: SizedBox(
                     width: context.width,
-                    child: Image.asset(Assets.imagesAuthImage,fit: BoxFit.fill,))),
+                    child: Image.asset(Assets.imagesAuthImage,fit: BoxFit.cover,))),
             Container(
               height: context.height*0.55,
               width: double.infinity,

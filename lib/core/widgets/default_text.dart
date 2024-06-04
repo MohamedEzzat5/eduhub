@@ -13,7 +13,7 @@ class DefaultText extends StatelessWidget {
   final TextDecoration? textDecoration;
 
   const DefaultText(
-      {Key? key,
+      {super.key,
         required this.text,
         this.maxLines,
         this.color = Colors.black,
@@ -22,8 +22,7 @@ class DefaultText extends StatelessWidget {
         this.fontWeight = FontWeight.normal,
         this.overflow = TextOverflow.ellipsis,
         this.textDecoration,
-        this.fontSize})
-      : super(key: key);
+        this.fontSize});
 
   @override
   Widget build(BuildContext context) {

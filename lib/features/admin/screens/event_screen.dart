@@ -1,13 +1,11 @@
 import 'package:faculty_app/core/utils/constance.dart';
 import 'package:faculty_app/core/utils/media_query_values.dart';
 import 'package:faculty_app/core/utils/style.dart';
-import 'package:faculty_app/generated/assets.dart';
+import 'package:faculty_app/core/widgets/gaps.dart';
+ import 'package:faculty_app/generated/assets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-
-import '../../../config/routes/app_routes.dart';
-import '../../../core/widgets/default_button.dart';
-
 class AdminEventScreen extends StatefulWidget {
   const AdminEventScreen({super.key});
 
@@ -38,7 +36,7 @@ class _DoctorScreenState extends State<AdminEventScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         GestureDetector(
-                          onTap:(){Navigator.pop(context);},
+                          onTap:()=> GoRouter.of(context).pop(),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
@@ -63,56 +61,28 @@ class _DoctorScreenState extends State<AdminEventScreen> {
                   ),
                   child: Column(
                     children: [
-                      Align(
-                          alignment: Alignment.centerLeft,
-                          child: Padding(
-                            padding: const EdgeInsets.all(15.0),
-                            child: IconButton(
-                              onPressed: () {
-                                GoRouter.of(context).push(AppRouter.adminAddNewSubjectScreen);
-
-                              },
-                              icon: const Icon(
-                                Icons.add_comment_rounded,
-                                size: 28,
-                              ),
-                              color: kPrimaryColor,
-                            ),
-                          )),
                       Expanded(
                         child: ListView.builder(
-                          itemCount: 5,
+                          itemCount: 1,
                           itemBuilder: (context, index) {
                             return Container(
-                              height: 50,
-                              width: double.infinity,
-                              margin: const EdgeInsets.all(10),
+                              padding: EdgeInsets.all(15.r),
+                              margin:   EdgeInsets.all(15.r),
                               decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(15),
-                                  color: const Color(0xffF5F5F5)
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(15),
+                               border: Border.all(color: Colors.grey),
                               ),
-                              child: const Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              child: Column(
                                 children: [
-                                  Row(
-                                    children: [
-                                      Icon(Icons.delete,color: kPrimaryColor,),
-                                      Icon(Icons.edit,color: kPrimaryColor,),
-                                    ],
-                                  ),
-                                  Text('بناء مترجمات',style: Styles.textStyle18,textDirection: TextDirection.rtl,textAlign: TextAlign.right,),
+                                  Gaps.vGap16,
 
                                 ],
                               ),
                             );
                           },),
                       ),
-                      Center(child: CustomMaterialButton(text: 'اضافه ماده للدكتور',fontWeight: FontWeight.w600,fontSize: 20,width: context.width*0.7,
-                        onPressed: (){
-                          GoRouter.of(context).push(AppRouter.adminAddSubjectToDoctorScreen);
-                        },
-                      )),
-                      const SizedBox(height: 50,),
+
                     ],
                   )
               ),
