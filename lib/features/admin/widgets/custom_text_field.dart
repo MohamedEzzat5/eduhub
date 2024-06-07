@@ -9,11 +9,19 @@ class CustomAddNewTypeTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
+      textDirection: TextDirection.rtl,
       controller: controller,
       decoration: InputDecoration(
-        label: Text(label,textDirection: TextDirection.rtl,),
+        label: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Text(label,textDirection: TextDirection.ltr,textAlign: TextAlign.start,),
+          ],
+        ),
         floatingLabelAlignment: FloatingLabelAlignment.start,
+        enabledBorder: const UnderlineInputBorder(),
+
       ),
     );
   }

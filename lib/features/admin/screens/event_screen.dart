@@ -1,3 +1,4 @@
+import 'package:faculty_app/config/routes/app_routes.dart';
 import 'package:faculty_app/core/utils/constance.dart';
 import 'package:faculty_app/core/utils/media_query_values.dart';
 import 'package:faculty_app/core/utils/style.dart';
@@ -38,30 +39,13 @@ class _DoctorScreenState extends State<AdminEventScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         GestureDetector(
-                          onTap:()=> GoRouter.of(context).pop(),
+                          onTap: GoRouter.of(context).pop,
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            mainAxisAlignment: MainAxisAlignment.end,
                             children: [
-                              CustomMaterialButton(
-                                onPressed: () {
-                                  GoRouter.of(context).pop();
-                                },
-                                text: 'اضافة',
-                                fontWeight: FontWeight.w600,
-                                fontSize: 20,
-                                background: Colors.white,
-                                padding:  EdgeInsets.all(10.r),
-                                height:  35.h,
-                                textColor: kPrimaryColor,
-                                width: context.width * 0.3,
-                              ),
-                              Row(
-                                children: [
-                                  const Icon(Icons.arrow_back_ios_new_rounded,color: Colors.white,),
-                                  Text('فعاليات',style: Styles.textStyle24.copyWith(color: Colors.white),),
+                              const Icon(Icons.arrow_back_ios_new_rounded,color: Colors.white,),
+                              Text('فعاليات',style: Styles.textStyle24.copyWith(color: Colors.white),),
 
-                                ],
-                              ),
                             ],
                           ),
                         ),
@@ -138,6 +122,20 @@ class _DoctorScreenState extends State<AdminEventScreen> {
                             );
                           },),
                       ),
+                      Gaps.vGap30,
+                      CustomMaterialButton(
+                        onPressed: () {
+                          GoRouter.of(context).push(AppRouter.adminAddNewEventScreen);
+                        },
+                        text: 'اضافة',
+                        fontWeight: FontWeight.w600,
+                        fontSize: 20,
+                        background: kPrimaryColor,
+                        padding:  EdgeInsets.all(10.r),
+                        height:  35.h,
+                        width: context.width * 0.3,
+                      ),
+                      Gaps.vGap30,
 
                     ],
                   )

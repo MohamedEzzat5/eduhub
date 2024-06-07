@@ -34,5 +34,8 @@ class Assets {
   static const String imagesSubject = 'assets/images/subject.png';
   static const String imagesTable = 'assets/images/table.png';
   static const String imagesTasgel = 'assets/images/tasgel.png';
+  static const String imagesDoctorTable = 'assets/images/doctor_table.png';
+  static const String imagesDoctorGrads = 'assets/images/doctor_grads.png';
+  static const String imagesSheet = 'assets/images/sheet.png';
 
 }

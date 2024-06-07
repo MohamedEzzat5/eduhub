@@ -132,6 +132,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       } else if (selectedRole == 'Student') {
                         GoRouter.of(context).push(AppRouter.studentHomeScreen);
                       }
+                      else if (selectedRole == 'Doctor') {
+                        GoRouter.of(context).push(AppRouter.doctorHomeScreen);
+                      }
                     }, text: 'Login',fontWeight: FontWeight.w600,fontSize: 20,),
 
 
