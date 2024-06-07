@@ -1,4 +1,5 @@
 import 'package:faculty_app/features/admin/screens/add_new_doctor.dart';
+import 'package:faculty_app/features/admin/screens/add_new_event_screen.dart';
 import 'package:faculty_app/features/admin/screens/admin_home_screen.dart';
 import 'package:faculty_app/features/admin/screens/admin_doctor_screen.dart';
 import 'package:faculty_app/features/admin/screens/admin_student_screen.dart';
@@ -8,10 +9,15 @@ import 'package:faculty_app/features/auth/screens/login_screen.dart';
 import 'package:faculty_app/features/auth/screens/reset_password_screen.dart';
 import 'package:faculty_app/features/auth/screens/verification_done_screen.dart';
 import 'package:faculty_app/features/auth/screens/verification_screen.dart';
+import 'package:faculty_app/features/doctor/screens/add_new_lec_screen.dart';
+import 'package:faculty_app/features/doctor/screens/add_new_sheet_screen.dart';
+import 'package:faculty_app/features/doctor/screens/doctor_current_subject.dart';
+import 'package:faculty_app/features/doctor/screens/doctor_subject_screen.dart';
 import 'package:faculty_app/features/guest/screens/first_guest_screen.dart';
 import 'package:faculty_app/features/guest/screens/second_guest_screen.dart';
 import 'package:faculty_app/features/splash/presentation/screens/splash_view.dart';
 import 'package:faculty_app/features/student/current_subject.dart';
+import 'package:faculty_app/features/student/event_screen.dart';
 import 'package:faculty_app/features/student/grads.dart';
 import 'package:faculty_app/features/student/student_subject_screen.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +26,7 @@ import '../../features/admin/screens/add_new_student.dart';
 import '../../features/admin/screens/add_new_subject.dart';
 import '../../features/admin/screens/add_subject_to_doctor.dart';
 import '../../features/admin/screens/subject_screen.dart';
+import '../../features/doctor/screens/doctor_home_screen.dart';
 import '../../features/guest/screens/fourth_guest_screen.dart';
 import '../../features/guest/screens/third_guest_screen.dart';
 import '../../features/student/student_home_screen.dart';
@@ -43,11 +50,21 @@ class AppRouter {
   static const adminSubjectScreen = '/adminSubjectScreen';
   static const adminAddNewSubjectScreen = '/adminAddNewSubjectScreen';
   static const adminAddSubjectToDoctorScreen = '/adminAddSubjectToDoctorScreen';
+  static const adminAddNewEventScreen = '/adminAddNewEventScreen';
   static const adminEventScreen = '/adminEventScreen';
   static const studentHomeScreen = '/studentHomeScreen';
   static const studentGradsScreen = '/studentGradsScreen';
   static const studentSubjectScreen = '/studentSubjectScreen';
   static const studentCurrentSubjectScreen = '/studentCurrentSubjectScreen';
+  static const studentEventScreen = '/studentEventScreen';
+  static const doctorSubjectScreen = '/doctorSubjectScreen';
+  static const doctorCurrentSubjectScreen = '/doctorCurrentSubjectScreen';
+  static const doctorAddLecScreen = '/doctorAddLecScreen';
+  static const doctorAddSheetScreen = '/doctorAddSheetScreen';
+
+
+  /// Doctor Routes
+  static const doctorHomeScreen = '/doctorHomeScreen';
 
   static final router = GoRouter(
       routes: <RouteBase>[
@@ -200,6 +217,20 @@ class AppRouter {
           },
         ),
 
+        GoRoute(
+          path: studentEventScreen,
+          builder: (BuildContext context, GoRouterState state) {
+            return const StudentEventScreen();
+          },
+        ),
+
+        GoRoute(
+          path: adminAddNewEventScreen,
+          builder: (BuildContext context, GoRouterState state) {
+            return const AdminAddNewEventScreen();
+          },
+        ),
+
 
         GoRoute(
           path: studentHomeScreen,
@@ -229,6 +260,45 @@ class AppRouter {
           path: studentCurrentSubjectScreen,
           builder: (BuildContext context, GoRouterState state) {
             return const CurrentSubject();
+          },
+        ),
+
+        GoRoute(
+          path: doctorHomeScreen,
+          builder: (BuildContext context, GoRouterState state) {
+            return const DoctorHomeScreen();
+          },
+        ),
+
+
+        GoRoute(
+          path: doctorSubjectScreen,
+          builder: (BuildContext context, GoRouterState state) {
+            return const DoctorSubjectScreen();
+          },
+        ),
+
+
+        GoRoute(
+          path: doctorCurrentSubjectScreen,
+          builder: (BuildContext context, GoRouterState state) {
+            return const DoctorCurrentSubject();
+          },
+        ),
+
+
+        GoRoute(
+          path: doctorAddLecScreen,
+          builder: (BuildContext context, GoRouterState state) {
+            return const AddNewLecScreen();
+          },
+        ),
+
+
+        GoRoute(
+          path: doctorAddSheetScreen,
+          builder: (BuildContext context, GoRouterState state) {
+            return const AddNewSheetScreen();
           },
         ),
 

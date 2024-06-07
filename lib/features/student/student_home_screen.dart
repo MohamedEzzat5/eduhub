@@ -115,7 +115,7 @@ class StudentHomeScreen extends StatelessWidget {
                       image: Assets.imagesEvents,
                       title: 'فعاليات',
                       onTap: () {
-                        GoRouter.of(context).push(AppRouter.adminEventScreen);
+                        GoRouter.of(context).push(AppRouter.studentEventScreen);
                       },
                     ),
 
