@@ -73,23 +73,20 @@ class _AdminAddNewEventScreenState extends State<AdminAddNewEventScreen> {
                     const SizedBox(
                       height: 20,
                     ),
-                    Container(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start
-                        ,
-                        children: [
-                          Icon(
-                            Icons.cloud_upload_rounded,
-                            size: 40.r,
-                            color: kPrimaryColor,
-                          ),
-                          Gaps.hGap16,
-                          Text(
-                            'اضافه صوره',
-                            style: TextStyles.semiBold14(),
-                          ),
-                        ],
-                      ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Icon(
+                          Icons.cloud_upload_rounded,
+                          size: 40.r,
+                          color: kPrimaryColor,
+                        ),
+                        Gaps.hGap16,
+                        Text(
+                          'اضافه صوره',
+                          style: TextStyles.semiBold14(),
+                        ),
+                      ],
                     ),
                     const SizedBox(
                       height: 30,
