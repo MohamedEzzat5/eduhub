@@ -5,7 +5,6 @@ import 'package:faculty_app/core/widgets/gaps.dart';
 import 'package:faculty_app/generated/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 
 class StudentEventScreen extends StatefulWidget {
   const StudentEventScreen({super.key});
@@ -36,7 +35,7 @@ class _DoctorScreenState extends State<StudentEventScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         GestureDetector(
-                          onTap: GoRouter.of(context).pop,
+                          onTap: Navigator.of(context).pop,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [

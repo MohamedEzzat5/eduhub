@@ -1,10 +1,8 @@
-
 import 'package:faculty_app/config/routes/app_routes.dart';
 import 'package:faculty_app/core/utils/app_strings.dart';
 import 'package:faculty_app/core/widgets/custom_app_bar.dart';
 import 'package:faculty_app/generated/assets.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import '../../../core/utils/style.dart';
 import '../widgets/custom_guest_body.dart';
 
@@ -17,8 +15,7 @@ class ThirdGuestScreen extends StatelessWidget {
         height: 50,
         actionTitle: 'Next',
         actionOnPress: () {
-          GoRouter.of(context).push(AppRouter.fourthGuestScreen);
-
+          Navigator.pushNamed(context, AppRouter.fourthGuestScreen);
         },
       ),
       body: CustomGuestBody(
@@ -26,13 +23,15 @@ class ThirdGuestScreen extends StatelessWidget {
         bodyWidget: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Spacer(flex: 2,),
+            const Spacer(
+              flex: 2,
+            ),
             Transform.rotate(
               angle: 0.1,
               child: Container(
                 margin: const EdgeInsets.symmetric(horizontal: 30),
                 padding: const EdgeInsets.all(10),
-                decoration:  BoxDecoration(
+                decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(30)),
                 child: Column(
@@ -40,7 +39,8 @@ class ThirdGuestScreen extends StatelessWidget {
                   children: [
                     Text(
                       AppStrings.thirdGuestText1,
-                      style: Styles.textStyle20.copyWith(color: Colors.black,fontWeight: FontWeight.w600),
+                      style: Styles.textStyle20.copyWith(
+                          color: Colors.black, fontWeight: FontWeight.w600),
                       textDirection: TextDirection.rtl,
                     ),
                     Text(
@@ -52,13 +52,15 @@ class ThirdGuestScreen extends StatelessWidget {
                 ),
               ),
             ),
-            const Spacer(flex: 3,),
+            const Spacer(
+              flex: 3,
+            ),
             Transform.rotate(
               angle: -0.1,
               child: Container(
                 margin: const EdgeInsets.symmetric(horizontal: 30),
                 padding: const EdgeInsets.all(10),
-                decoration:  BoxDecoration(
+                decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(30)),
                 child: Column(
@@ -66,7 +68,8 @@ class ThirdGuestScreen extends StatelessWidget {
                   children: [
                     Text(
                       AppStrings.thirdGuestText3,
-                      style: Styles.textStyle20.copyWith(color: Colors.black,fontWeight: FontWeight.w600),
+                      style: Styles.textStyle20.copyWith(
+                          color: Colors.black, fontWeight: FontWeight.w600),
                       textDirection: TextDirection.rtl,
                     ),
                     Text(
@@ -78,8 +81,9 @@ class ThirdGuestScreen extends StatelessWidget {
                 ),
               ),
             ),
-            const Spacer(flex: 5,),
-
+            const Spacer(
+              flex: 5,
+            ),
           ],
         ),
       ),

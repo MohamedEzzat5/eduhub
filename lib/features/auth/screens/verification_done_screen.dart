@@ -5,7 +5,6 @@ import 'package:faculty_app/core/utils/style.dart';
 import 'package:faculty_app/core/widgets/default_button.dart';
 import 'package:faculty_app/generated/assets.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class VerificationDoneScreen extends StatelessWidget {
   const VerificationDoneScreen({super.key});
@@ -40,14 +39,14 @@ class VerificationDoneScreen extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                       Text(
+                      Text(
                         'Verification Done',
-                        style: Styles.textStyle36.copyWith(color: kPrimaryColor),
+                        style:
+                            Styles.textStyle36.copyWith(color: kPrimaryColor),
                       ),
                       const SizedBox(
                         height: 20,
                       ),
-
                       Container(
                         height: 100,
                         width: 100,
@@ -56,16 +55,20 @@ class VerificationDoneScreen extends StatelessWidget {
                           color: kPrimaryColor,
                         ),
                         child: const Center(
-                          child: Icon(Icons.done_rounded,size: 60,color: Colors.white,),
+                          child: Icon(
+                            Icons.done_rounded,
+                            size: 60,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
-
                       const SizedBox(
                         height: 40,
                       ),
                       CustomMaterialButton(
                         onPressed: () {
-                          GoRouter.of(context).push(AppRouter.resetPasswordScreen);
+                          Navigator.pushNamed(
+                              context, AppRouter.resetPasswordScreen);
                         },
                         text: 'Get Started',
                         fontWeight: FontWeight.w600,

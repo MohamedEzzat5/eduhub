@@ -4,7 +4,6 @@ import 'package:faculty_app/core/utils/style.dart';
 import 'package:faculty_app/core/widgets/default_form_field.dart';
 import 'package:faculty_app/generated/assets.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class AdminDoctorScreen extends StatefulWidget {
   const AdminDoctorScreen({super.key});
@@ -36,7 +35,7 @@ class _AdminDoctorScreenState extends State<AdminDoctorScreen> {
                       children: [
                         GestureDetector(
                           onTap: () {
-                            GoRouter.of(context).pop();
+                            Navigator.of(context).pop();
                           },
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.end,
@@ -93,8 +92,8 @@ class _AdminDoctorScreenState extends State<AdminDoctorScreen> {
                             padding: const EdgeInsets.all(15.0),
                             child: IconButton(
                               onPressed: () {
-                                GoRouter.of(context).push(AppRouter.adminAddNewDoctorScreen);
-
+                                Navigator.pushNamed(
+                                    context, AppRouter.adminAddNewDoctorScreen);
                               },
                               icon: const Icon(
                                 Icons.add_comment_rounded,

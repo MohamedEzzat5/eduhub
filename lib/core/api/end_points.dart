@@ -1,4 +1,4 @@
 class EndPoints {
-  static const String baseUrl = 'https://api.quotable.io/';
-  static const String randomQuote = '${baseUrl}random';
+  static const String baseUrl = "https://faculty-app2.onrender.com/api/";
+  static const String login = '${baseUrl}user/login';
 }

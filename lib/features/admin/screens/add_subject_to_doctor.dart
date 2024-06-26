@@ -1,7 +1,6 @@
 import 'package:faculty_app/core/utils/media_query_values.dart';
 import 'package:faculty_app/features/admin/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import '../../../core/widgets/default_button.dart';
 import '../../../generated/assets.dart';
 
@@ -67,7 +66,7 @@ class _AdminAddSubjectToDoctorScreenState
                     Center(
                         child: CustomMaterialButton(
                       onPressed: () {
-                        GoRouter.of(context).pop();
+                        Navigator.of(context).pop();
                       },
                       text: 'تم',
                       fontWeight: FontWeight.w600,

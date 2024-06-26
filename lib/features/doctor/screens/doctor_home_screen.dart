@@ -4,7 +4,6 @@ import 'package:faculty_app/core/utils/style.dart';
 import 'package:faculty_app/features/admin/widgets/admin_home_grid_view_item.dart';
 import 'package:faculty_app/generated/assets.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class DoctorHomeScreen extends StatelessWidget {
   const DoctorHomeScreen({super.key});
@@ -22,7 +21,7 @@ class DoctorHomeScreen extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 15),
                 width: double.infinity,
                 color: kPrimaryColor,
-                child:  Center(
+                child: Center(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -31,12 +30,19 @@ class DoctorHomeScreen extends StatelessWidget {
                         radius: 35,
                       ),
                       Column(
-                        mainAxisAlignment:  MainAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
-                          Text('جمال فاروق',style: Styles.textStyle22.copyWith(color: Colors.white),),
-                          Text('gamal.elfarok@giail.com',
-                            style: Styles.textStyle22.copyWith(color: Colors.white38),),
+                          Text(
+                            'جمال فاروق',
+                            style: Styles.textStyle22
+                                .copyWith(color: Colors.white),
+                          ),
+                          Text(
+                            'gamal.elfarok@giail.com',
+                            style: Styles.textStyle22
+                                .copyWith(color: Colors.white38),
+                          ),
                         ],
                       ),
                     ],
@@ -49,8 +55,10 @@ class DoctorHomeScreen extends StatelessWidget {
               child: Container(
                 decoration: const BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.only(topRight: Radius.circular(30), topLeft: Radius.circular(30),)
-                ),
+                    borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(30),
+                      topLeft: Radius.circular(30),
+                    )),
                 child: GridView.count(
                   crossAxisCount: 2,
                   padding: const EdgeInsets.all(20),
@@ -59,21 +67,37 @@ class DoctorHomeScreen extends StatelessWidget {
                   crossAxisSpacing: 10,
                   mainAxisSpacing: 10,
                   children: [
-                    CustomAdminGridViewItem(image: Assets.imagesDoctorTable,title: 'جدول المحاضرات',onTap: (){
-                      GoRouter.of(context).push(AppRouter.adminDoctorScreen);
-                    },),
-                    CustomAdminGridViewItem(image: Assets.imagesBooks,title: 'المواد',onTap: (){
-                      GoRouter.of(context).push(AppRouter.doctorSubjectScreen);
-                    },),
-                    CustomAdminGridViewItem(image: Assets.imagesDoctorGrads,title: 'الدرجات',onTap: (){
-                      GoRouter.of(context).push(AppRouter.adminEventScreen);
-                    },),
-
-                    CustomAdminGridViewItem(image: Assets.imagesExit,title: 'خروج',onTap: (){
-                      GoRouter.of(context).pop();
-                    },),
-
-
+                    CustomAdminGridViewItem(
+                      image: Assets.imagesDoctorTable,
+                      title: 'جدول المحاضرات',
+                      onTap: () {
+                        Navigator.pushNamed(
+                            context, AppRouter.doctorTableScreen);
+                      },
+                    ),
+                    CustomAdminGridViewItem(
+                      image: Assets.imagesBooks,
+                      title: 'المواد',
+                      onTap: () {
+                        Navigator.pushNamed(
+                            context, AppRouter.doctorSubjectScreen);
+                      },
+                    ),
+                    CustomAdminGridViewItem(
+                      image: Assets.imagesDoctorGrads,
+                      title: 'الدرجات',
+                      onTap: () {
+                        Navigator.pushNamed(
+                            context, AppRouter.doctorGradsScreen);
+                      },
+                    ),
+                    CustomAdminGridViewItem(
+                      image: Assets.imagesExit,
+                      title: 'خروج',
+                      onTap: () {
+                        Navigator.of(context).pop();
+                      },
+                    ),
                   ],
                 ),
               ),
@@ -84,5 +108,3 @@ class DoctorHomeScreen extends StatelessWidget {
     );
   }
 }
-
-

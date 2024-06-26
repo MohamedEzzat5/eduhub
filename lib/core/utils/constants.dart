@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:go_router/go_router.dart';
 
 import 'app_colors.dart';
 
@@ -21,7 +20,7 @@ class Constants {
         actions: [
           TextButton(
             onPressed: () {
-              GoRouter.of(context).pop();
+              Navigator.of(context).pop();
             },
             style: TextButton.styleFrom(foregroundColor: Colors.black),
             child: const Text(
@@ -38,8 +37,6 @@ class Constants {
     );
   }
 
-
-
   static void showToast({
     required String message,
     ToastGravity? gravity,
@@ -48,9 +45,9 @@ class Constants {
     Fluttertoast.showToast(
       webPosition: 'center',
       toastLength: Toast.LENGTH_LONG,
-        msg: message,
-        gravity: gravity ?? ToastGravity.BOTTOM,
-        backgroundColor: color ?? AppColors.primary,
+      msg: message,
+      gravity: gravity ?? ToastGravity.BOTTOM,
+      backgroundColor: color ?? AppColors.primary,
     );
   }
 }

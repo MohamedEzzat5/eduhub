@@ -1,9 +1,7 @@
- 
 import 'package:faculty_app/config/routes/app_routes.dart';
 import 'package:faculty_app/core/widgets/custom_app_bar.dart';
 import 'package:faculty_app/generated/assets.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import '../widgets/custom_guest_body.dart';
 
 class FourthGuestScreen extends StatelessWidget {
@@ -16,13 +14,11 @@ class FourthGuestScreen extends StatelessWidget {
         height: 50,
         actionTitle: 'Exit',
         actionOnPress: () {
-          GoRouter.of(context).push(AppRouter.initialRoute);
+          Navigator.pushNamed(context, AppRouter.initialRoute);
         },
       ),
       body: const CustomGuestBody(
-        bgImage: Assets.imagesGuest4,
-        bodyWidget: SizedBox()
-      ),
+          bgImage: Assets.imagesGuest4, bodyWidget: SizedBox()),
     );
   }
 }

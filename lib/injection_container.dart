@@ -7,7 +7,6 @@ import 'core/api/app_interceptor.dart';
 import 'core/api/dio_consumer.dart';
 import 'core/network/network_info.dart';
 
-
 final sl = GetIt.instance;
 
 Future<void> init() async {
@@ -44,6 +43,7 @@ Future<void> init() async {
   //         () => LangLocalDataSourceImpl(sharedPreferences: sl()));
 
   /// Core
+  sl.registerLazySingleton<ApiConsumer>(() => DioConsumer(client: sl()));
   sl.registerLazySingleton<NetworkInfo>(
       () => NetworkInfoImpl(internetConnectionChecker: sl()));
   sl.registerLazySingleton<ApiConsumer>(() => DioConsumer(client: sl()));

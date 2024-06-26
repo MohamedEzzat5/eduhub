@@ -4,7 +4,6 @@ import 'package:faculty_app/core/utils/style.dart';
 import 'package:faculty_app/core/widgets/custom_app_bar.dart';
 import 'package:faculty_app/generated/assets.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import '../widgets/custom_guest_body.dart';
 
 class SecondGuestScreen extends StatelessWidget {
@@ -17,7 +16,7 @@ class SecondGuestScreen extends StatelessWidget {
         height: 50,
         actionTitle: 'Next',
         actionOnPress: () {
-          GoRouter.of(context).push(AppRouter.thirdGuestScreen);
+          Navigator.pushNamed(context, AppRouter.thirdGuestScreen);
         },
       ),
       body: CustomGuestBody(
@@ -29,7 +28,11 @@ class SecondGuestScreen extends StatelessWidget {
               padding: const EdgeInsets.all(15.0),
               child: Align(
                   alignment: Alignment.center,
-                  child: Text(AppStrings.secondGuestText1, style: Styles.textStyle24.copyWith(color: Colors.black),textDirection: TextDirection.rtl,)),
+                  child: Text(
+                    AppStrings.secondGuestText1,
+                    style: Styles.textStyle24.copyWith(color: Colors.black),
+                    textDirection: TextDirection.rtl,
+                  )),
             ),
             Container(
               margin: const EdgeInsets.only(left: 60),
@@ -44,7 +47,8 @@ class SecondGuestScreen extends StatelessWidget {
                 children: [
                   Text(
                     AppStrings.secondGuestText2,
-                    style: Styles.textStyle20.copyWith(color: Colors.black,fontWeight: FontWeight.w600),
+                    style: Styles.textStyle20.copyWith(
+                        color: Colors.black, fontWeight: FontWeight.w600),
                     textDirection: TextDirection.rtl,
                   ),
                   Text(
@@ -69,7 +73,8 @@ class SecondGuestScreen extends StatelessWidget {
                 children: [
                   Text(
                     AppStrings.secondGuestText4,
-                    style: Styles.textStyle20.copyWith(color: Colors.black,fontWeight: FontWeight.w600),
+                    style: Styles.textStyle20.copyWith(
+                        color: Colors.black, fontWeight: FontWeight.w600),
                     textDirection: TextDirection.rtl,
                   ),
                   Text(
@@ -94,7 +99,8 @@ class SecondGuestScreen extends StatelessWidget {
                 children: [
                   Text(
                     AppStrings.secondGuestText6,
-                    style: Styles.textStyle20.copyWith(color: Colors.black,fontWeight: FontWeight.w600),
+                    style: Styles.textStyle20.copyWith(
+                        color: Colors.black, fontWeight: FontWeight.w600),
                     textDirection: TextDirection.rtl,
                   ),
                   Text(
@@ -105,7 +111,9 @@ class SecondGuestScreen extends StatelessWidget {
                 ],
               ),
             ),
-            const Spacer(flex: 5,),
+            const Spacer(
+              flex: 5,
+            ),
           ],
         ),
       ),

@@ -4,7 +4,6 @@ import 'package:faculty_app/core/utils/style.dart';
 import 'package:faculty_app/core/widgets/default_button.dart';
 import 'package:faculty_app/generated/assets.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import '../../../core/widgets/default_form_field.dart';
 
 class ForgetPasswordScreen extends StatefulWidget {
@@ -22,33 +21,47 @@ class _LoginScreenState extends State<ForgetPasswordScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return   Scaffold(
+    return Scaffold(
       backgroundColor: const Color(0xffe9e9e9),
       body: Column(
         children: [
-          Expanded(flex: 2,
+          Expanded(
+              flex: 2,
               child: SizedBox(
                   width: context.width,
-                  child: Image.asset(Assets.imagesAuthImage,fit: BoxFit.cover,))),
+                  child: Image.asset(
+                    Assets.imagesAuthImage,
+                    fit: BoxFit.cover,
+                  ))),
           Expanded(
             flex: 2,
             child: Container(
               width: double.infinity,
               decoration: const BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.only(topRight: Radius.circular(30), topLeft: Radius.circular(30),)
-              ),
-              child:  SingleChildScrollView(
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(30),
+                    topLeft: Radius.circular(30),
+                  )),
+              child: SingleChildScrollView(
                 child: Padding(
                   padding: const EdgeInsets.all(30.0),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text('Forgot Password',style: Styles.textStyle36,),
-                       Text('Enter your email account to reset your password',
-                         style: Styles.textStyle14.copyWith(fontWeight: FontWeight.w500),),
-                      const SizedBox(height: 20,),
+                      const Text(
+                        'Forgot Password',
+                        style: Styles.textStyle36,
+                      ),
+                      Text(
+                        'Enter your email account to reset your password',
+                        style: Styles.textStyle14
+                            .copyWith(fontWeight: FontWeight.w500),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
                       CustomFormField(
                         controller: emailController,
                         labelText: 'Email',
@@ -61,21 +74,24 @@ class _LoginScreenState extends State<ForgetPasswordScreen> {
                           size: 22,
                         ),
                       ),
-
-                      const SizedBox(height: 40,),
-                      CustomMaterialButton(onPressed: (){
-                        GoRouter.of(context).push(AppRouter.verificationScreen);
-                      }, text: 'send code',fontWeight: FontWeight.w600,fontSize: 20,),
-
-
-
+                      const SizedBox(
+                        height: 40,
+                      ),
+                      CustomMaterialButton(
+                        onPressed: () {
+                          Navigator.pushNamed(
+                              context, AppRouter.verificationScreen);
+                        },
+                        text: 'send code',
+                        fontWeight: FontWeight.w600,
+                        fontSize: 20,
+                      ),
                     ],
                   ),
                 ),
               ),
             ),
           ),
-
         ],
       ),
     );

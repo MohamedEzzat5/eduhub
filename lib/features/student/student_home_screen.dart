@@ -2,15 +2,17 @@ import 'package:faculty_app/config/routes/app_routes.dart';
 import 'package:faculty_app/core/utils/constance.dart';
 import 'package:faculty_app/core/utils/style.dart';
 import 'package:faculty_app/features/admin/widgets/admin_home_grid_view_item.dart';
+import 'package:faculty_app/features/student/pdf_viewer.dart';
 import 'package:faculty_app/generated/assets.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class StudentHomeScreen extends StatelessWidget {
   const StudentHomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    String url =
+        'https://mu.menofia.edu.eg/PrtlFiles/Faculties/fci/Portal/Files/%D9%84%D8%A7%D8%A6%D8%AD%D8%A9%20%D8%AD%D8%A7%D8%B3%D8%A8%D8%A7%D8%AA%20%D8%A7%D9%84%D9%85%D9%86%D9%88%D9%81%D9%8A%D8%A9%20%D8%A7%D9%84%D9%86%D8%B3%D8%AE%D8%A9%20%D8%A7%D9%84%D9%85%D8%B9%D8%AF%D9%84%D8%A9-1.pdf';
     return SafeArea(
       child: Scaffold(
         backgroundColor: kPrimaryColor,
@@ -79,61 +81,63 @@ class StudentHomeScreen extends StatelessWidget {
                       image: Assets.imagesBooks,
                       title: 'المواد',
                       onTap: () {
-                        GoRouter.of(context).push(AppRouter.studentSubjectScreen);
+                        Navigator.pushNamed(
+                            context, AppRouter.studentSubjectScreen);
                       },
                     ),
                     CustomAdminGridViewItem(
                       image: Assets.imagesTasgel,
                       title: 'التسجيل الأكاديمي',
-                      onTap: () {
-                        GoRouter.of(context).push(AppRouter.adminDoctorScreen);
-                      },
+                      onTap: () {},
                     ),
-
                     CustomAdminGridViewItem(
                       image: Assets.imagesProgress,
                       title: 'تقدم الطالب',
-                      onTap: () {
-
-                      },
+                      onTap: () {},
                     ),
-
                     CustomAdminGridViewItem(
                       image: Assets.imagesPath,
                       title: 'تقديرات المقررات',
                       onTap: () {
-                          GoRouter.of(context).push(AppRouter.studentGradsScreen);
+                        Navigator.pushNamed(
+                            context, AppRouter.studentGradsScreen);
                       },
                     ),
                     CustomAdminGridViewItem(
-                      image: Assets.imagesTable   ,
+                      image: Assets.imagesTable,
                       title: 'الجدول الدراسي',
                       onTap: () {
+                        Navigator.pushNamed(
+                            context, AppRouter.studentTableScreenRoute);
                       },
                     ),
                     CustomAdminGridViewItem(
                       image: Assets.imagesEvents,
                       title: 'فعاليات',
                       onTap: () {
-                        GoRouter.of(context).push(AppRouter.studentEventScreen);
+                        Navigator.pushNamed(
+                            context, AppRouter.studentEventScreen);
                       },
                     ),
-
                     CustomAdminGridViewItem(
                       image: Assets.imagesExit,
                       title: 'خروج',
                       onTap: () {
-                        GoRouter.of(context).pop();
+                        Navigator.of(context).pop();
                       },
                     ),
                     CustomAdminGridViewItem(
                       image: Assets.imagesList,
                       title: 'الائحه',
                       onTap: () {
-
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => PdfViewerScreen(
+                                      url: url,
+                                    )));
                       },
                     ),
-
                   ],
                 ),
               ),

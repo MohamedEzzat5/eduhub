@@ -4,7 +4,6 @@ import 'package:faculty_app/core/utils/style.dart';
 import 'package:faculty_app/core/widgets/default_form_field.dart';
 import 'package:faculty_app/generated/assets.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 import '../../../config/routes/app_routes.dart';
 import '../../../core/widgets/default_button.dart';
@@ -17,7 +16,6 @@ class AdminSubjectScreen extends StatefulWidget {
 }
 
 class _DoctorScreenState extends State<AdminSubjectScreen> {
-
   final TextEditingController doctorController = TextEditingController();
 
   @override
@@ -33,22 +31,31 @@ class _DoctorScreenState extends State<AdminSubjectScreen> {
                 padding: const EdgeInsets.symmetric(horizontal: 15),
                 width: double.infinity,
                 color: kPrimaryColor,
-                child:  Stack(
+                child: Stack(
                   children: [
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         GestureDetector(
-                          onTap:()=> GoRouter.of(context).pop(),
+                          onTap: () => Navigator.of(context).pop(),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
-                              const Icon(Icons.arrow_back_ios_new_rounded,color: Colors.white,),
-                              Text('المواد',style: Styles.textStyle24.copyWith(color: Colors.white),),
+                              const Icon(
+                                Icons.arrow_back_ios_new_rounded,
+                                color: Colors.white,
+                              ),
+                              Text(
+                                'المواد',
+                                style: Styles.textStyle24
+                                    .copyWith(color: Colors.white),
+                              ),
                             ],
                           ),
                         ),
-                        const SizedBox(height: 25,),
+                        const SizedBox(
+                          height: 25,
+                        ),
                         CustomFormField(
                           backgroundColor: Colors.white,
                           controller: doctorController,
@@ -59,10 +66,12 @@ class _DoctorScreenState extends State<AdminSubjectScreen> {
                           hintText: 'search',
                           suffixIcon: const Icon(Icons.search),
                         )
-
                       ],
                     ),
-                    Image.asset(Assets.imagesStars,alignment: Alignment.center,),
+                    Image.asset(
+                      Assets.imagesStars,
+                      alignment: Alignment.center,
+                    ),
                   ],
                 ),
               ),
@@ -72,8 +81,10 @@ class _DoctorScreenState extends State<AdminSubjectScreen> {
               child: Container(
                   decoration: const BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.only(topRight: Radius.circular(30), topLeft: Radius.circular(30),)
-                  ),
+                      borderRadius: BorderRadius.only(
+                        topRight: Radius.circular(30),
+                        topLeft: Radius.circular(30),
+                      )),
                   child: Column(
                     children: [
                       Align(
@@ -82,8 +93,8 @@ class _DoctorScreenState extends State<AdminSubjectScreen> {
                             padding: const EdgeInsets.all(15.0),
                             child: IconButton(
                               onPressed: () {
-                                GoRouter.of(context).push(AppRouter.adminAddNewSubjectScreen);
-
+                                Navigator.pushNamed(context,
+                                    AppRouter.adminAddNewStudentScreen);
                               },
                               icon: const Icon(
                                 Icons.add_comment_rounded,
@@ -102,33 +113,51 @@ class _DoctorScreenState extends State<AdminSubjectScreen> {
                               margin: const EdgeInsets.all(10),
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(15),
-                                  color: const Color(0xffF5F5F5)
-                              ),
+                                  color: const Color(0xffF5F5F5)),
                               child: const Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Row(
                                     children: [
-                                      Icon(Icons.delete,color: kPrimaryColor,),
-                                      Icon(Icons.edit,color: kPrimaryColor,),
+                                      Icon(
+                                        Icons.delete,
+                                        color: kPrimaryColor,
+                                      ),
+                                      Icon(
+                                        Icons.edit,
+                                        color: kPrimaryColor,
+                                      ),
                                     ],
                                   ),
-                                  Text('بناء مترجمات',style: Styles.textStyle18,textDirection: TextDirection.rtl,textAlign: TextAlign.right,),
-
+                                  Text(
+                                    'بناء مترجمات',
+                                    style: Styles.textStyle18,
+                                    textDirection: TextDirection.rtl,
+                                    textAlign: TextAlign.right,
+                                  ),
                                 ],
                               ),
                             );
-                          },),
+                          },
+                        ),
                       ),
-                      Center(child: CustomMaterialButton(text: 'اضافه ماده للدكتور',fontWeight: FontWeight.w600,fontSize: 20,width: context.width*0.7,
-                        onPressed: (){
-                        GoRouter.of(context).push(AppRouter.adminAddSubjectToDoctorScreen);
+                      Center(
+                          child: CustomMaterialButton(
+                        text: 'اضافه ماده للدكتور',
+                        fontWeight: FontWeight.w600,
+                        fontSize: 20,
+                        width: context.width * 0.7,
+                        onPressed: () {
+                          Navigator.pushNamed(
+                              context, AppRouter.adminAddSubjectToDoctorScreen);
                         },
                       )),
-                      const SizedBox(height: 50,),
+                      const SizedBox(
+                        height: 50,
+                      ),
                     ],
-                  )
-              ),
+                  )),
             ),
           ],
         ),
@@ -136,5 +165,3 @@ class _DoctorScreenState extends State<AdminSubjectScreen> {
     );
   }
 }
-
-
