@@ -1,7 +1,8 @@
 import 'package:dio/dio.dart';
+import 'package:faculty_app/features/auth/screens/cubit/login/login_cubit.dart';
+import 'package:faculty_app/features/auth/screens/cubit/logout_cubit/logout_cubit.dart';
 import 'package:get_it/get_it.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'core/api/api_consumer.dart';
 import 'core/api/app_interceptor.dart';
 import 'core/api/dio_consumer.dart';
@@ -11,6 +12,10 @@ final sl = GetIt.instance;
 
 Future<void> init() async {
   ///!!! Features
+  ///
+  sl.registerLazySingleton<LoginCubit>(() => LoginCubit(api: sl()));
+  sl.registerLazySingleton<LogoutCubit>(() => LogoutCubit(apiConsumer: sl()));
+  
 
   /// Blocs
   // sl.registerFactory<RandomQuoteCubit>(
@@ -43,14 +48,13 @@ Future<void> init() async {
   //         () => LangLocalDataSourceImpl(sharedPreferences: sl()));
 
   /// Core
-  sl.registerLazySingleton<ApiConsumer>(() => DioConsumer(client: sl()));
   sl.registerLazySingleton<NetworkInfo>(
       () => NetworkInfoImpl(internetConnectionChecker: sl()));
   sl.registerLazySingleton<ApiConsumer>(() => DioConsumer(client: sl()));
 
   //! External
-  final sharedPreferences = await SharedPreferences.getInstance();
-  sl.registerLazySingleton(() => sharedPreferences);
+  // final sharedPreferences = await SharedPreferences.getInstance();
+  // sl.registerLazySingleton(() => sharedPreferences);
   sl.registerLazySingleton(() => AppInterceptors());
   sl.registerLazySingleton(() => LogInterceptor(
       request: true,

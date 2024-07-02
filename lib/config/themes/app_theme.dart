@@ -1,3 +1,4 @@
+import 'package:faculty_app/core/utils/constance.dart';
 import 'package:flutter/material.dart';
 
 import '../../core/utils/app_colors.dart';
@@ -8,14 +9,18 @@ ThemeData appTheme() {
     primaryColor: AppColors.primary,
     hintColor: AppColors.hint,
     brightness: Brightness.light,
-    scaffoldBackgroundColor: Colors.white,
+    scaffoldBackgroundColor: kPrimaryColor,
     fontFamily: AppStrings.fontFamily,
     appBarTheme: const AppBarTheme(
+      color: kPrimaryColor,
       centerTitle: true,
-      color: Colors.transparent,
-      elevation: 0.2,
+      elevation: 0,
+      iconTheme: IconThemeData(color: Colors.white),
       titleTextStyle: TextStyle(
-          color: Colors.black, fontWeight: FontWeight.w500, fontSize: 20),
+          color: Colors.white,
+          fontWeight: FontWeight.w600,
+          fontSize: 21,
+          fontFamily: AppStrings.fontFamily),
     ),
     colorScheme: ColorScheme.fromSeed(
       seedColor: AppColors.primary,

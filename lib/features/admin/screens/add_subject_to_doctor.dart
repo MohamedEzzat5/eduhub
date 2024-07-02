@@ -21,6 +21,7 @@ class _AdminAddSubjectToDoctorScreenState
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xffc2c4bf),
+      appBar: AppBar(),
       body: SingleChildScrollView(
         child: Column(
           children: [

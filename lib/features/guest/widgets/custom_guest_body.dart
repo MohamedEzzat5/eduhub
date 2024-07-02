@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 class CustomGuestBody extends StatelessWidget {
   const CustomGuestBody({
-    super.key, required this.bgImage, required this.bodyWidget,
+    super.key,
+    required this.bgImage,
+    required this.bodyWidget,
   });
 
   final String bgImage;
@@ -13,8 +15,9 @@ class CustomGuestBody extends StatelessWidget {
     return Container(
         height: double.infinity,
         width: double.infinity,
-        decoration:  BoxDecoration(
-            image: DecorationImage(image: AssetImage(bgImage),fit: BoxFit.fitWidth   )),
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage(bgImage), fit: BoxFit.fitWidth)),
         child: bodyWidget);
   }
 }

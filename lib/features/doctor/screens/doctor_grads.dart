@@ -11,43 +11,17 @@ class DoctorGradsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('الدرجات'),
+      ),
       body: Column(children: [
-        Expanded(
-          flex: 1,
-          child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
-            width: double.infinity,
-            color: kPrimaryColor,
-            child: Stack(
-              children: [
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    GestureDetector(
-                      onTap: () => Navigator.of(context).pop(),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          const Icon(
-                            Icons.arrow_back_ios_new_rounded,
-                            color: Colors.white,
-                          ),
-                          Text(
-                            'الدرجات',
-                            style: Styles.textStyle24
-                                .copyWith(color: Colors.white),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-                Image.asset(
-                  Assets.imagesStars,
-                  alignment: Alignment.center,
-                ),
-              ],
-            ),
+        Container(
+          height: 40,
+          width: double.infinity,
+          color: kPrimaryColor,
+          child: Image.asset(
+            Assets.imagesStars,
+            alignment: Alignment.center,
           ),
         ),
         Expanded(

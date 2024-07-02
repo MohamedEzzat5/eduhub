@@ -4,7 +4,7 @@ import 'package:faculty_app/core/utils/media_query_values.dart';
 import 'package:faculty_app/core/utils/style.dart';
 import 'package:faculty_app/core/widgets/default_button.dart';
 import 'package:faculty_app/core/widgets/default_text_button.dart';
-import 'package:faculty_app/features/auth/screens/cubit/auth_cubit.dart';
+import 'package:faculty_app/features/auth/screens/cubit/login/login_cubit.dart';
 import 'package:faculty_app/generated/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

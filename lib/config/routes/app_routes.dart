@@ -1,3 +1,4 @@
+import 'package:faculty_app/features/student/add_subjects_screen.dart';
 import 'package:flutter/material.dart';
 
 // Import all your screens here
@@ -71,6 +72,7 @@ class AppRouter {
   static const doctorTableScreen = '/doctorTableScreen';
   static const doctorGradsScreen = '/doctorGradsScreen';
   static const studentTableScreenRoute = '/studentTableScreen';
+  static const studentAddSubjectScreenRoute = '/studentAddSubjectScreenRoute';
 
   /// Doctor Routes
   static const doctorHomeScreen = '/doctorHomeScreen';
@@ -99,7 +101,7 @@ class AppRouter {
       case resetPasswordScreen:
         return MaterialPageRoute(builder: (_) => const ResetPasswordScreen());
       case adminHomeScreen:
-        return MaterialPageRoute(builder: (_) => const AdminHomeScreen());
+        return MaterialPageRoute(builder: (_) =>  AdminHomeScreen());
       case adminDoctorScreen:
         return MaterialPageRoute(builder: (_) => const AdminDoctorScreen());
       case adminStudentScreen:
@@ -124,7 +126,7 @@ class AppRouter {
         return MaterialPageRoute(
             builder: (_) => const AdminAddNewEventScreen());
       case studentHomeScreen:
-        return MaterialPageRoute(builder: (_) => const StudentHomeScreen());
+        return MaterialPageRoute(builder: (_) =>  StudentHomeScreen());
       case studentGradsScreen:
         return MaterialPageRoute(builder: (_) => const GradsScreen());
       case studentSubjectScreen:
@@ -132,7 +134,7 @@ class AppRouter {
       case studentCurrentSubjectScreen:
         return MaterialPageRoute(builder: (_) => const CurrentSubject());
       case doctorHomeScreen:
-        return MaterialPageRoute(builder: (_) => const DoctorHomeScreen());
+        return MaterialPageRoute(builder: (_) =>  DoctorHomeScreen());
       case doctorSubjectScreen:
         return MaterialPageRoute(builder: (_) => const DoctorSubjectScreen());
       case doctorCurrentSubjectScreen:
@@ -147,6 +149,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const DoctorGradsScreen());
       case studentTableScreenRoute:
         return MaterialPageRoute(builder: (_) => const StudentTableScreen());
+      case studentAddSubjectScreenRoute:
+        return MaterialPageRoute(builder: (_) => const AddSubjectsScreen());
       default:
         return MaterialPageRoute(builder: (_) => const SplashScreen());
     }

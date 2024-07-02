@@ -20,24 +20,24 @@ class CustomMaterialButton extends StatelessWidget {
   final double? textScaleFactor;
   final FontWeight? fontWeight;
 
-  const CustomMaterialButton(
-      {super.key,
-        this.textColor = Colors.white,
-        required this.onPressed,
-        required this.text,
-        this.width = double.infinity,
-        this.isUpperCase = false,
-        this.background = kPrimaryColor,
-        this.radius = 40,
-        this.splashColor,
-        this.padding,
-        this.height = 57,
-        this.fontSize,
-        this.textScaleFactor,
-        this.fontWeight,
-        this.elevation = 0,
-        this.loading=false,
-      });
+  const CustomMaterialButton({
+    super.key,
+    this.textColor = Colors.white,
+    required this.onPressed,
+    required this.text,
+    this.width = double.infinity,
+    this.isUpperCase = false,
+    this.background = kPrimaryColor,
+    this.radius = 40,
+    this.splashColor,
+    this.padding,
+    this.height = 57,
+    this.fontSize,
+    this.textScaleFactor,
+    this.fontWeight,
+    this.elevation = 0,
+    this.loading = false,
+  });
 
   @override
   Widget build(BuildContext context) {

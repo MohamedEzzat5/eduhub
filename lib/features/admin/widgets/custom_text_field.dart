@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 
 class CustomAddNewTypeTextField extends StatelessWidget {
   const CustomAddNewTypeTextField({
-    super.key, required this.controller, required this.label,
+    super.key,
+    required this.controller,
+    required this.label,
   });
   final TextEditingController controller;
   final String label;
@@ -16,12 +18,15 @@ class CustomAddNewTypeTextField extends StatelessWidget {
         label: Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Text(label,textDirection: TextDirection.ltr,textAlign: TextAlign.start,),
+            Text(
+              label,
+              textDirection: TextDirection.ltr,
+              textAlign: TextAlign.start,
+            ),
           ],
         ),
         floatingLabelAlignment: FloatingLabelAlignment.start,
         enabledBorder: const UnderlineInputBorder(),
-
       ),
     );
   }

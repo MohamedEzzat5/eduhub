@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../utils/constance.dart';
 
-
 class CustomFormField extends StatelessWidget {
   final TextEditingController controller;
   final String Function(String?)? validator;
@@ -42,42 +41,42 @@ class CustomFormField extends StatelessWidget {
 
   const CustomFormField(
       {super.key,
-        required this.controller,
-        this.validator,
-        this.onTap,
-        this.labelText,
-        this.keyboardType = TextInputType.text,
-        this.onFieldSubmitted,
-        this.onEditingComplete,
-        this.onChanged,
-        this.obscureText = false,
-        this.prefixIcon,
-        this.suffixIcon,
-        this.initialValue,
-        this.hintText,
-        this.backgroundColor,
-        this.height,
-        this.radius = 50.0,
-        this.maxLines,
-        this.enabled = true,
-        this.inputBorder =
-        const OutlineInputBorder(borderSide: BorderSide(width: 1)),
-        this.inputEnabledBorder,
-        this.inputFocusedBorder,
-        this.inputDisabledBorder,
-        this.horizontalPadding = 0,
-        this.textColor,
-        this.labelColor = kPrimaryColor,
-        this.contentPadding,
-        this.containerAlignment,
-        this.suffixText,
-        this.suffixTextStyle,
-        this.suffixIconConstraints,
-        this.readOnly = false,
-        this.cursorColor,
-        this.maxLength,
-        this.textDirection = TextDirection.ltr,
-        this.textAlign = TextAlign.start});
+      required this.controller,
+      this.validator,
+      this.onTap,
+      this.labelText,
+      this.keyboardType = TextInputType.text,
+      this.onFieldSubmitted,
+      this.onEditingComplete,
+      this.onChanged,
+      this.obscureText = false,
+      this.prefixIcon,
+      this.suffixIcon,
+      this.initialValue,
+      this.hintText,
+      this.backgroundColor,
+      this.height,
+      this.radius = 50.0,
+      this.maxLines,
+      this.enabled = true,
+      this.inputBorder =
+          const OutlineInputBorder(borderSide: BorderSide(width: 1)),
+      this.inputEnabledBorder,
+      this.inputFocusedBorder,
+      this.inputDisabledBorder,
+      this.horizontalPadding = 0,
+      this.textColor,
+      this.labelColor = kPrimaryColor,
+      this.contentPadding,
+      this.containerAlignment,
+      this.suffixText,
+      this.suffixTextStyle,
+      this.suffixIconConstraints,
+      this.readOnly = false,
+      this.cursorColor,
+      this.maxLength,
+      this.textDirection = TextDirection.ltr,
+      this.textAlign = TextAlign.start});
 
   @override
   Widget build(BuildContext context) {
@@ -99,10 +98,11 @@ class CustomFormField extends StatelessWidget {
         initialValue: initialValue,
         controller: controller,
         validator: (data) {
-          if(data!.isEmpty){
-            return  'This field is required';
-          } return null;
-        } ,
+          if (data!.isEmpty) {
+            return 'This field is required';
+          }
+          return null;
+        },
         keyboardType: keyboardType,
         onFieldSubmitted: onFieldSubmitted,
         onEditingComplete: onEditingComplete,
@@ -121,8 +121,8 @@ class CustomFormField extends StatelessWidget {
           floatingLabelBehavior: FloatingLabelBehavior.always,
           suffixIconConstraints: suffixIconConstraints,
           labelStyle: Theme.of(context).textTheme.bodySmall!.copyWith(
-            color: labelColor,
-          ),
+                color: labelColor,
+              ),
           labelText: labelText,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(40),

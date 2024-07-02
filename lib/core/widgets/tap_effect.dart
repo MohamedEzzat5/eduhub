@@ -70,7 +70,6 @@ class TapEffectState extends State<TapEffect>
                 widget.onClick!();
               }
 
-
               isProgress = true;
             }
           } catch (_) {}

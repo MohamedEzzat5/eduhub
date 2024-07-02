@@ -1,8 +1,6 @@
-
 import 'package:faculty_app/core/utils/assets_manger.dart';
 import 'package:faculty_app/features/splash/presentation/screens/widgets/sliding_body.dart';
 import 'package:flutter/cupertino.dart';
-
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -31,12 +29,13 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   @override
   Widget build(BuildContext context) {
-
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        Image.asset(AssetsData.logo,),
+        Image.asset(
+          AssetsData.logo,
+        ),
         SlidingBody(slidingAnimation: slidingAnimation),
       ],
     );

@@ -11,6 +11,9 @@ class AppStrings {
   static const String englishCode = 'en';
   static const String arabicCode = 'ar';
   static const String locale = 'locale';
+  static const String token = 'token';
+  static const String userID = 'userID';
+  static const String user = 'user';
 
   /////////////////////
 
@@ -37,20 +40,9 @@ class AppStrings {
   static const String secondGuestText7 =
       'تتركز الدراسة على التعامل مع قواعد البيانات وكيفية تحليلها بالإضافة إلى دراسة الشبكات وتعلم بعض لغات البرمجة الخاصة بالتعامل قواعد البيانات مثل لغة SQL';
   static const String thirdGuestText1 = 'مزايا كلية حاسبات ومعلومات';
-  static const String thirdGuestText2 = '-توافر فرص العمل برواتب مجزية -إمكانية العمل بالخارج بسهولة -إمكانية الحصول على عمل حر من خلال الإنترنت تعزيز مهارة حل المشاكل';
+  static const String thirdGuestText2 =
+      '-توافر فرص العمل برواتب مجزية -إمكانية العمل بالخارج بسهولة -إمكانية الحصول على عمل حر من خلال الإنترنت تعزيز مهارة حل المشاكل';
   static const String thirdGuestText3 = 'عيوب كلية حاسبات ومعلومات';
-  static const String thirdGuestText4 = '-الاعتماد على الكلية غير كافي لدخول سوق العملتحتاج إلى التعلم الذاتي -يتعرض المبرمجين عادة لبعض المشاكل الصحية نظراً للجلوس لفترة طويلة';
-
-
-
-
-
-
-
-
-
-
+  static const String thirdGuestText4 =
+      '-الاعتماد على الكلية غير كافي لدخول سوق العملتحتاج إلى التعلم الذاتي -يتعرض المبرمجين عادة لبعض المشاكل الصحية نظراً للجلوس لفترة طويلة';
 }
-
-
-

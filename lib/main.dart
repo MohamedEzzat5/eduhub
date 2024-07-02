@@ -1,9 +1,15 @@
 import 'package:bloc/bloc.dart';
 import 'package:faculty_app/bloc_observer.dart';
+import 'package:faculty_app/local/app_shared_prefs.dart';
 import 'package:flutter/material.dart';
 import 'app.dart';
+import 'injection_container.dart' as di;
 
-void main() {
+void main() async {
+  di.init();
+  WidgetsFlutterBinding.ensureInitialized();
+  await AppSharedPreferences().initSharedPreferencesProp();
+
   runApp(const FacultyApp());
   Bloc.observer = AppBlocObserver();
 }

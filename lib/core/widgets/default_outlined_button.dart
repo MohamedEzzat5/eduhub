@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../utils/constance.dart';
 
-
 class DefaultOutlinedButton extends StatelessWidget {
   final double width;
   final double height;

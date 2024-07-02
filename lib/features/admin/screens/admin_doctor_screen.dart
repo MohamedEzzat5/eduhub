@@ -17,133 +17,88 @@ class _AdminDoctorScreenState extends State<AdminDoctorScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        backgroundColor: kPrimaryColor,
-        body: Column(
-          children: [
-            Expanded(
-              flex: 1,
-              child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 15),
-                width: double.infinity,
-                color: kPrimaryColor,
-                child: Stack(
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('الدكتور'),
+      ),
+      body: Column(
+        children: [
+          Container(
+            height: 40,
+            width: double.infinity,
+            color: kPrimaryColor,
+            child: Image.asset(
+              Assets.imagesStars,
+              alignment: Alignment.center,
+            ),
+          ),
+          Expanded(
+            flex: 4,
+            child: Container(
+                decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(30),
+                      topLeft: Radius.circular(30),
+                    )),
+                child: Column(
                   children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.of(context).pop();
-                          },
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              const Icon(
-                                Icons.arrow_back_ios_new_rounded,
-                                color: Colors.white,
-                              ),
-                              Text(
-                                'الدكتور',
-                                style: Styles.textStyle24
-                                    .copyWith(color: Colors.white),
-                              ),
-                            ],
+                    Align(
+                        alignment: Alignment.centerRight,
+                        child: Padding(
+                          padding: const EdgeInsets.all(15.0),
+                          child: IconButton(
+                            onPressed: () {
+                              Navigator.pushNamed(
+                                  context, AppRouter.adminAddNewDoctorScreen);
+                            },
+                            icon: const Icon(
+                              Icons.add_comment_rounded,
+                              size: 28,
+                            ),
+                            color: kPrimaryColor,
                           ),
-                        ),
-                        const SizedBox(
-                          height: 25,
-                        ),
-                        CustomFormField(
-                          backgroundColor: Colors.white,
-                          controller: doctorController,
-                          keyboardType: TextInputType.text,
-                          radius: 40,
-                          height: 40,
-                          contentPadding: const EdgeInsets.all(10),
-                          hintText: 'search',
-                          suffixIcon: const Icon(Icons.search),
-                        )
-                      ],
-                    ),
-                    Image.asset(
-                      Assets.imagesStars,
-                      alignment: Alignment.center,
+                        )),
+                    Expanded(
+                      child: ListView.builder(
+                        itemCount: 5,
+                        itemBuilder: (context, index) {
+                          return Container(
+                            height: 50,
+                            width: double.infinity,
+                            margin: const EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15),
+                                color: const Color(0xffF5F5F5)),
+                            child: const Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  'hatem@gmail.com',
+                                  style: Styles.textStyle18,
+                                ),
+                                Row(
+                                  children: [
+                                    Icon(
+                                      Icons.edit,
+                                      color: kPrimaryColor,
+                                    ),
+                                    Icon(
+                                      Icons.delete,
+                                      color: kPrimaryColor,
+                                    ),
+                                  ],
+                                )
+                              ],
+                            ),
+                          );
+                        },
+                      ),
                     ),
                   ],
-                ),
-              ),
-            ),
-            Expanded(
-              flex: 4,
-              child: Container(
-                  decoration: const BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(30),
-                        topLeft: Radius.circular(30),
-                      )),
-                  child: Column(
-                    children: [
-                      Align(
-                          alignment: Alignment.centerRight,
-                          child: Padding(
-                            padding: const EdgeInsets.all(15.0),
-                            child: IconButton(
-                              onPressed: () {
-                                Navigator.pushNamed(
-                                    context, AppRouter.adminAddNewDoctorScreen);
-                              },
-                              icon: const Icon(
-                                Icons.add_comment_rounded,
-                                size: 28,
-                              ),
-                              color: kPrimaryColor,
-                            ),
-                          )),
-                      Expanded(
-                        child: ListView.builder(
-                          itemCount: 5,
-                          itemBuilder: (context, index) {
-                            return Container(
-                              height: 50,
-                              width: double.infinity,
-                              margin: const EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(15),
-                                  color: const Color(0xffF5F5F5)),
-                              child: const Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    'hatem@gmail.com',
-                                    style: Styles.textStyle18,
-                                  ),
-                                  Row(
-                                    children: [
-                                      Icon(
-                                        Icons.edit,
-                                        color: kPrimaryColor,
-                                      ),
-                                      Icon(
-                                        Icons.delete,
-                                        color: kPrimaryColor,
-                                      ),
-                                    ],
-                                  )
-                                ],
-                              ),
-                            );
-                          },
-                        ),
-                      ),
-                    ],
-                  )),
-            ),
-          ],
-        ),
+                )),
+          ),
+        ],
       ),
     );
   }

@@ -2,12 +2,18 @@ import 'package:faculty_app/config/routes/app_routes.dart';
 import 'package:faculty_app/core/utils/constance.dart';
 import 'package:faculty_app/core/utils/style.dart';
 import 'package:faculty_app/features/admin/widgets/admin_home_grid_view_item.dart';
+import 'package:faculty_app/features/auth/screens/cubit/logout_cubit/logout_cubit.dart';
 import 'package:faculty_app/features/student/pdf_viewer.dart';
 import 'package:faculty_app/generated/assets.dart';
+import 'package:faculty_app/local/app_shared_prefs.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 
 class StudentHomeScreen extends StatelessWidget {
-  const StudentHomeScreen({super.key});
+  StudentHomeScreen({super.key});
+  final AppSharedPreferences appSharedPreferences = AppSharedPreferences();
 
   @override
   Widget build(BuildContext context) {
@@ -24,39 +30,45 @@ class StudentHomeScreen extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 15),
                 width: double.infinity,
                 color: kPrimaryColor,
-                child: Center(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const CircleAvatar(
-                        backgroundColor: Color(0xffCACACA),
-                        radius: 35,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    CircleAvatar(
+                      radius: 40.r,
+                      backgroundColor: Colors.grey.withOpacity(0.3),
+                      child: CircleAvatar(
+                        radius: 37.r,
+                        backgroundColor: Colors.white,
+                        child: Center(
+                          child: SvgPicture.asset(
+                              'assets/images/user_profile_edit.svg'),
+                        ),
                       ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Text(
-                            'احمد عمار',
-                            style: Styles.textStyle22
-                                .copyWith(color: Colors.white),
-                          ),
-                          Text(
-                            'الفرقة الثالثة',
-                            style: Styles.textStyle20.copyWith(
-                                color: Colors.white70,
-                                fontWeight: FontWeight.w600),
-                          ),
-                          Text(
-                            '2000759',
-                            style: Styles.textStyle20.copyWith(
-                                color: Colors.white70,
-                                fontWeight: FontWeight.w600),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text(
+                          'احمد عمار',
+                          style:
+                              Styles.textStyle22.copyWith(color: Colors.white),
+                        ),
+                        Text(
+                          'الفرقة الثالثة',
+                          style: Styles.textStyle20.copyWith(
+                              color: Colors.white70,
+                              fontWeight: FontWeight.w600),
+                        ),
+                        Text(
+                          '2000759',
+                          style: Styles.textStyle20.copyWith(
+                              color: Colors.white70,
+                              fontWeight: FontWeight.w600),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
             ),
@@ -88,13 +100,16 @@ class StudentHomeScreen extends StatelessWidget {
                     CustomAdminGridViewItem(
                       image: Assets.imagesTasgel,
                       title: 'التسجيل الأكاديمي',
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.pushNamed(
+                            context, AppRouter.studentAddSubjectScreenRoute);
+                      },
                     ),
-                    CustomAdminGridViewItem(
-                      image: Assets.imagesProgress,
-                      title: 'تقدم الطالب',
-                      onTap: () {},
-                    ),
+                    // CustomAdminGridViewItem(
+                    //   image: Assets.imagesProgress,
+                    //   title: 'تقدم الطالب',
+                    //   onTap: () {},
+                    // ),
                     CustomAdminGridViewItem(
                       image: Assets.imagesPath,
                       title: 'تقديرات المقررات',
@@ -119,11 +134,44 @@ class StudentHomeScreen extends StatelessWidget {
                             context, AppRouter.studentEventScreen);
                       },
                     ),
-                    CustomAdminGridViewItem(
-                      image: Assets.imagesExit,
-                      title: 'خروج',
-                      onTap: () {
-                        Navigator.of(context).pop();
+                    BlocConsumer<LogoutCubit, LogoutState>(
+                      listener: (context, state) {
+                        if (state is LogoutSuccess) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              backgroundColor: Colors.green,
+                              content: Text(
+                                'تم تسجيل الخروج بنجاح',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 16),
+                              ),
+                            ),
+                          );
+                          Navigator.pushNamedAndRemoveUntil(
+                              context, AppRouter.loginScreen, (route) => false);
+                        } else if (state is LogoutError) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              backgroundColor: Colors.red,
+                              content: Text(state.message),
+                            ),
+                          );
+                        }
+                      },
+                      builder: (context, state) {
+                        return state is LogoutLoading
+                            ? const Center(child: CircularProgressIndicator())
+                            : CustomAdminGridViewItem(
+                                image: Assets.imagesExit,
+                                title: 'خروج',
+                                onTap: () {
+                                  context.read<LogoutCubit>().logout(
+                                        token: appSharedPreferences
+                                            .getUserToken()
+                                            .toString(),
+                                      );
+                                },
+                              );
                       },
                     ),
                     CustomAdminGridViewItem(

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 class DefaultText extends StatelessWidget {
   final String text;
   final int? maxLines;
@@ -14,15 +13,15 @@ class DefaultText extends StatelessWidget {
 
   const DefaultText(
       {super.key,
-        required this.text,
-        this.maxLines,
-        this.color = Colors.black,
-        this.textAlign,
-        this.textScaleFactor,
-        this.fontWeight = FontWeight.normal,
-        this.overflow = TextOverflow.ellipsis,
-        this.textDecoration,
-        this.fontSize});
+      required this.text,
+      this.maxLines,
+      this.color = Colors.black,
+      this.textAlign,
+      this.textScaleFactor,
+      this.fontWeight = FontWeight.normal,
+      this.overflow = TextOverflow.ellipsis,
+      this.textDecoration,
+      this.fontSize});
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +37,6 @@ class DefaultText extends StatelessWidget {
       maxLines: maxLines,
       overflow: overflow,
       textAlign: textAlign,
-
     );
   }
 }
